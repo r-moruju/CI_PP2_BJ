@@ -5,10 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Black Jack</title>
 </head>
 <body>
     <h1>Welcome to Black Jack!</h1>
+    <div id="dealer-hand">
+        <img src="assets/images/deck/king_of_spades.png" alt="">
+        <img src="assets/images/deck/red_joker.png" alt="">
+    </div>
+    <p>Dealer Score: <span id="dealer-score"></span></p>
+
+    <p>Player Score: <span id="player-score"></span></p>
+    <div id="player-hand">
+        <img src="assets/images/deck/king_of_spades.png" alt="">
+        <img src="assets/images/deck/red_joker.png" alt="">
+    </div>
+    <div id="buttons">
+        <button class="button" id="deal">Deal</button>
+        <button class="button" id="hit">Hit</button>
+        <button class="button" id="stand">Stand</button>
+    </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>

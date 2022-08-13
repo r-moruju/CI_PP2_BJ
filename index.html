@@ -5,33 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Black Jack</title>
+    <title>BlackJack</title>
 </head>
 <body>
     <div id="main-wrapper">
-        <h1>Black Jack</h1>
+        <h1>BlackJack</h1>
         <div id="message">
-            <h2>Welcome to Black Jack!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum hic dignissimos soluta exercitationem aliquam eveniet atque ex dolorem molestiae, tempora, magnam odio voluptatibus! Nisi facilis commodi delectus corrupti porro! Incidunt.</p><br>
+            <h2>Welcome to BlackJack!</h2>
+            <p>This is the classic blackjack game.
+                Enter your name and credit below and click "Ok".<br><br>
+                Click "Deal" to deal the cards. 
+                Click "Hit" to add another card to your hand. Try to get as close as possible to 21, but not over because you will lose. 
+                When you are satisfied with the value of your hands, click "Stand" and wait for the dealer's turn.<br> 
+                Whoever has the highest score wins.</p><br>
             <label for="player-name">Enter your name:</label>
             <input type="text" id="player-name"><br><br>
             <label for="credit">Your credit:</label>
             <input type="number" id="credit"><br>
-            <button class="button">Ok</button>
+            <button type="submit" class="button">Ok</button>
         </div>
+
+        <div id="credit-display">
+            <span id="credit-left">Credit: <span>0</span></span>
+        </div>
+
         <div id="dealer-hand">
             <img src="assets/images/deck/king_of_spades.png" alt="">
             <img src="assets/images/deck/card_back.png" alt="">
         </div>
-        <p>Dealer Score: <span id="dealer-score">0</span></p>
+        <p>Dealer Hand Value: <span id="dealer-score">0</span></p>
         
-        <select name="bet" id="bet">
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-        </select>
+        <div id="bet-section">
+            <p>Bet:</p>
+            <select name="bet" id="bet">
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
 
-        <p>Player Score: <span id="player-score">0</span></p>
+        <p><span id="player-name-display">Player</span> Hand Value: <span id="player-score">0</span></p>
         <div id="player-hand">
             <img src="assets/images/deck/king_of_spades.png" alt="">
             <img src="assets/images/deck/red_joker.png" alt="">

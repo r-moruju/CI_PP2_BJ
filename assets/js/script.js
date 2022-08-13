@@ -5,12 +5,15 @@ let dealerCards = [];
 let playerCards = [];
 let dealerHand = document.getElementById("dealer-hand");
 let playerHand = document.getElementById("player-hand");
+let dealerValue = 0;
+let playerValue = 0;
 
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("run-game").addEventListener("click", runGame);
     document.getElementById("deal").addEventListener("click", deal);
-    document.getElementById("hit").addEventListener("click", hit); 
+    document.getElementById("hit").addEventListener("click", hit);
+    document.getElementById("stand").addEventListener("click", stand); 
 })
 
 /**
@@ -61,6 +64,8 @@ function deal() {
     playerHand.innerHTML = "";
     playerCards = [];
     dealerCards = [];
+    dealerValue = 0;
+    playerValue = 0;
 
     dealCardsFromDeck();
     showHandValue();
@@ -96,13 +101,13 @@ function showHandValue (){
     let playerHandValue = document.getElementById("player-score");
     let dealerHandValue = document.getElementById("dealer-score");
 
-    let dealerValue = 0;
+    dealerValue = 0;
     for (let card of dealerCards){
         dealerValue += card.value;
         dealerHandValue.innerText = dealerValue;
     }
 
-    let playerValue = 0;
+    playerValue = 0;
     for (let card of playerCards){
         playerValue += card.value;
         playerHandValue.innerText = playerValue;
@@ -119,4 +124,18 @@ function hit() {
     <img src="assets/images/deck/${newCard.name}.png" alt="A game card"></img>
     `;
     showHandValue()
+}
+
+function stand() {
+    while (dealerValue < playerValue && dealerValue < 21) {
+        let newCard = deck.pop();
+        dealerCards.push(newCard);
+        dealerHand.innerHTML = "";
+        for (card of dealerCards) {
+            dealerHand.innerHTML += `
+                <img src="assets/images/deck/${card.name}.png" alt="A game card"></img>
+            `;
+        }
+        showHandValue()
+    }
 }

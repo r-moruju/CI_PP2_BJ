@@ -85,12 +85,27 @@ h1 {
     height: 600px;
     background-color: rgba(28, 25, 25, 0.9);
     padding: 30px;
+    border-radius: 5px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff4ee;
     /*display: none;*/
+}
+
+#end-game {
+    width: 400px;
+    height: 70px;
+    background-color: rgba(28, 25, 25, 0.9);
+    padding: 30px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff4ee;
+    display: none;
 }
 
 input {

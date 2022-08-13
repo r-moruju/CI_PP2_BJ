@@ -10,10 +10,7 @@ let playerValue = 0;
 
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("run-game").addEventListener("click", runGame);
-    document.getElementById("deal").addEventListener("click", deal);
-    document.getElementById("hit").addEventListener("click", hit);
-    document.getElementById("stand").addEventListener("click", stand); 
+    document.getElementById("run-game").addEventListener("click", runGame); 
 })
 
 /**
@@ -21,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
  * Get player name and credit.
  */
 function runGame() {
+    document.getElementById("deal").addEventListener("click", deal);
     let credit = document.getElementById("credit").value;
     let playerName = document.getElementById("player-name").value;
     document.getElementById("message").style.display = "none";
@@ -42,6 +40,10 @@ function runGame() {
  * Deal cards
  */
 function deal() {
+    document.getElementById("hit").addEventListener("click", hit);
+    document.getElementById("stand").addEventListener("click", stand);
+    document.getElementById("deal").removeEventListener("click", deal);
+    document.getElementById("end-game").style.display = "none";
     let cardsSuits = ["clubs", "diamonds", "hearts", "spades"];
     let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
     for (let suit of cardsSuits) {
@@ -64,8 +66,6 @@ function deal() {
     playerHand.innerHTML = "";
     playerCards = [];
     dealerCards = [];
-    dealerValue = 0;
-    playerValue = 0;
 
     dealCardsFromDeck();
     showHandValue();
@@ -123,10 +123,16 @@ function hit() {
     playerHand.innerHTML += `
     <img src="assets/images/deck/${newCard.name}.png" alt="A game card"></img>
     `;
-    showHandValue()
+    showHandValue();
+    checkForBust();
 }
 
+/**
+ * deal cards to dealer
+ */
 function stand() {
+    document.getElementById("stand").removeEventListener("click", stand);
+    document.getElementById("hit").removeEventListener("click", hit);
     while (dealerValue < playerValue && dealerValue < 21) {
         let newCard = deck.pop();
         dealerCards.push(newCard);
@@ -136,6 +142,33 @@ function stand() {
                 <img src="assets/images/deck/${card.name}.png" alt="A game card"></img>
             `;
         }
-        showHandValue()
+        showHandValue();
+        checkForBust();
+        if (dealerValue > playerValue) {
+            let endGame = document.getElementById("end-game")
+            let bet = document.getElementById("bet").value;
+            endGame.innerHTML += `<p>Dealer won! You lost ${bet}.</p>`;
+            endGame.style.display = "unset";
+            document.getElementById("deal").addEventListener("click", deal);
+        }
+    }
+}
+
+function checkForBust() {
+    let endGame = document.getElementById("end-game")
+    let bet = document.getElementById("bet").value;
+    endGame.innerHTML = ""
+    if (playerValue > 21) {
+        endGame.innerHTML += `<p>Bust! You lost ${bet}.</p>`;
+        endGame.style.display = "unset";
+        document.getElementById("deal").addEventListener("click", deal);
+    } else if (dealerValue > 21) {
+        endGame.innerHTML += `<p>Dealer Bust! You won ${bet}!</p>`;
+        endGame.style.display = "unset";
+        document.getElementById("deal").addEventListener("click", deal);
+    } else if (playerValue === dealerValue) {
+        endGame.innerHTML += "<p>It's a draw!</p>"
+        endGame.style.display = "unset";
+        document.getElementById("deal").addEventListener("click", deal);
     }
 }

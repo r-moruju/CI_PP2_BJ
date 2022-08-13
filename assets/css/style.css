@@ -1,18 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    border: none;
 }
 
 body {
     background: url(../images/main-background.png) center no-repeat;
     background-size: cover;
     text-align: center;
+    font-family: 'Rubik Dirt', cursive;
 }
 
 #main-wrapper {
     height: fit-content;
-    background-color: rgba(160, 155, 155, 0.5);
+    background-color: rgba(160, 155, 155, 0.3);
 }
 
 div {
@@ -29,13 +31,25 @@ p {
     font-size: 24px;
 }
 
+h1 {
+    padding: 10px;
+}
+
 #buttons {
     margin-top: 10px;
 }
 
 .button {
+    padding: 5px;
     margin: 30px;
     font-size: x-large;
+    font-family: 'Rubik Dirt', cursive;
     border-radius: 5px;
-    border-width: 2px;
+    background-color:  #ba8475;
+    border: none;
+}
+
+.button:hover,
+.button:active {
+    background-color: #fa0000;
 }

@@ -47,5 +47,18 @@ function deal() {
     }
     /* Shuffle deck */
     deck.sort(() => (Math.random() > .5) ? 1 : -1);
-    console.log(deck)
+    dealCardsFromDeck();
+}
+
+function dealCardsFromDeck () {
+    let dealerHand = document.getElementById("dealer-hand");
+    let playerHand = document.getElementById("player-hand");
+    dealerHand.innerHTML = `
+        <img src="assets/images/deck/${deck.pop().name}.png" alt="A game card">
+        <img src="assets/images/deck/card_back.png" alt="A game card">
+    `;
+    playerHand.innerHTML = `
+        <img src="assets/images/deck/${deck.pop().name}.png" alt="A game card">
+        <img src="assets/images/deck/${deck.pop().name}.png" alt="A game card">
+    `;
 }

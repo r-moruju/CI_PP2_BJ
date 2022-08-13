@@ -13,7 +13,7 @@ function runGame() {
     let credit = document.getElementById("credit").value;
     let playerName = document.getElementById("player-name").value;
     document.getElementById("message").style.display = "none";
-    if (credit.length < 20) {
+    if (credit.length < 2) {
         document.getElementById("credit-left").innerText = "20";
     } else {
         document.getElementById("credit-left").innerText = credit;

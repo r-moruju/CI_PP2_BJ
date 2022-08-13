@@ -1,6 +1,10 @@
-console.log('my first console log');
+
+/*Global Variables*/
+let deck = []
 
 document.getElementById("run-game").addEventListener("click", runGame);
+document.getElementById("deal").addEventListener("click", deal)
+
 /**
  * Clear the wellcome message.
  * Get player name and credit.
@@ -19,4 +23,29 @@ function runGame() {
     } else {
         document.getElementById("player-name-display").innerText = playerName;
     } 
+}
+
+/**
+ * Create card deck
+ * Shuffle deck
+ * Deal cards
+ */
+function deal() {
+    let cardsSuits = ["clubs", "diamonds", "hearts", "spades"];
+    let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
+    for (let suit of cardsSuits) {
+        for (let value of cardsValues) {
+            let card = {}
+            card.name = value + "_of_" + suit;
+            if (value.length < 3) {
+                card.value = parseInt(value);
+            } else {
+                card.value = 10;
+            }
+            deck.push(card)
+        }
+    }
+    /* Shuffle deck */
+    deck.sort(() => (Math.random() > .5) ? 1 : -1);
+    console.log(deck)
 }

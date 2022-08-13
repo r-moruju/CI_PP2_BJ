@@ -22,8 +22,8 @@ div {
 }
 
 img {
+    border-radius: 7px;
     height: 95%;
-    padding-top: 1%;
 }
 
 p {
@@ -33,6 +33,7 @@ p {
 
 h1 {
     padding: 10px;
+    padding-bottom: 20px;
 }
 
 #buttons {

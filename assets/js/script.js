@@ -1,9 +1,14 @@
 
 /*Global Variables*/
-let deck = []
+let deck = [];
+let dealerCards = [];
+let playerCards = [];
+let dealerHand = document.getElementById("dealer-hand");
+let playerHand = document.getElementById("player-hand");
 
 document.getElementById("run-game").addEventListener("click", runGame);
-document.getElementById("deal").addEventListener("click", deal)
+document.getElementById("deal").addEventListener("click", deal);
+document.getElementById("hit").addEventListener("click", hit);
 
 /**
  * Clear the wellcome message.
@@ -47,18 +52,70 @@ function deal() {
     }
     /* Shuffle deck */
     deck.sort(() => (Math.random() > .5) ? 1 : -1);
+
+    /* reset hands */
+    dealerHand.innerHTML = "";
+    playerHand.innerHTML = "";
+    playerCards = [];
+    dealerCards = [];
+
     dealCardsFromDeck();
+    showHandValue();
 }
 
+/**
+ * Deal starting cards and display corresponding images
+ */
 function dealCardsFromDeck () {
-    let dealerHand = document.getElementById("dealer-hand");
-    let playerHand = document.getElementById("player-hand");
+
+    dealerCards.push(deck.pop());
+    console.log(dealerCards);
+
+    for (let i = 1; i <= 2; i++) {
+        playerCards.push(deck.pop());
+    }
+    console.log(playerCards);
+
     dealerHand.innerHTML = `
-        <img src="assets/images/deck/${deck.pop().name}.png" alt="A game card">
+        <img src="assets/images/deck/${dealerCards[0].name}.png" alt="A game card">
         <img src="assets/images/deck/card_back.png" alt="A game card">
     `;
-    playerHand.innerHTML = `
-        <img src="assets/images/deck/${deck.pop().name}.png" alt="A game card">
-        <img src="assets/images/deck/${deck.pop().name}.png" alt="A game card">
+
+    for (let card of playerCards) {
+        playerHand.innerHTML += `
+            <img src="assets/images/deck/${card.name}.png" alt="A game card"></img>
+        `;
+    }
+}
+
+/**
+ * Get hands value and update it on screen
+ */
+function showHandValue (){
+    let playerHandValue = document.getElementById("player-score");
+    let dealerHandValue = document.getElementById("dealer-score");
+
+    let dealerValue = 0;
+    for (let card of dealerCards){
+        dealerValue += card.value;
+        dealerHandValue.innerText = dealerValue;
+    }
+
+    let playerValue = 0;
+    for (let card of playerCards){
+        playerValue += card.value;
+        playerHandValue.innerText = playerValue;
+    }
+}
+
+/**
+ * Add one card to player hand
+ */
+function hit() {
+    let newCard = deck.pop();
+    playerCards.push(newCard);
+    playerHand.innerHTML += `
+    <img src="assets/images/deck/${newCard.name}.png" alt="A game card"></img>
     `;
+    showHandValue()
 }

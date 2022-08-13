@@ -9,12 +9,27 @@
 </head>
 <body>
     <div id="main-wrapper">
-        <h1>Welcome to Black Jack!</h1>
+        <h1>Black Jack</h1>
+        <div id="message">
+            <h2>Welcome to Black Jack!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum hic dignissimos soluta exercitationem aliquam eveniet atque ex dolorem molestiae, tempora, magnam odio voluptatibus! Nisi facilis commodi delectus corrupti porro! Incidunt.</p><br>
+            <label for="player-name">Enter your name:</label>
+            <input type="text" id="player-name"><br><br>
+            <label for="credit">Your credit:</label>
+            <input type="number" id="credit"><br>
+            <button class="button">Ok</button>
+        </div>
         <div id="dealer-hand">
             <img src="assets/images/deck/king_of_spades.png" alt="">
             <img src="assets/images/deck/card_back.png" alt="">
         </div>
         <p>Dealer Score: <span id="dealer-score">0</span></p>
+        
+        <select name="bet" id="bet">
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
 
         <p>Player Score: <span id="player-score">0</span></p>
         <div id="player-hand">

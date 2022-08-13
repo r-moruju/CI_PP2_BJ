@@ -6,9 +6,12 @@ let playerCards = [];
 let dealerHand = document.getElementById("dealer-hand");
 let playerHand = document.getElementById("player-hand");
 
-document.getElementById("run-game").addEventListener("click", runGame);
-document.getElementById("deal").addEventListener("click", deal);
-document.getElementById("hit").addEventListener("click", hit);
+// Wait for page to load
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("run-game").addEventListener("click", runGame);
+    document.getElementById("deal").addEventListener("click", deal);
+    document.getElementById("hit").addEventListener("click", hit); 
+})
 
 /**
  * Clear the wellcome message.
@@ -50,10 +53,10 @@ function deal() {
             deck.push(card)
         }
     }
-    /* Shuffle deck */
+    // Shuffle deck
     deck.sort(() => (Math.random() > .5) ? 1 : -1);
 
-    /* reset hands */
+    // reset hands
     dealerHand.innerHTML = "";
     playerHand.innerHTML = "";
     playerCards = [];
@@ -69,12 +72,10 @@ function deal() {
 function dealCardsFromDeck () {
 
     dealerCards.push(deck.pop());
-    console.log(dealerCards);
 
     for (let i = 1; i <= 2; i++) {
         playerCards.push(deck.pop());
     }
-    console.log(playerCards);
 
     dealerHand.innerHTML = `
         <img src="assets/images/deck/${dealerCards[0].name}.png" alt="A game card">

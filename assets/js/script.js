@@ -11,7 +11,7 @@ let playerValue = 0;
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("run-game").addEventListener("click", runGame); 
-})
+});
 
 /**
  * Clear the wellcome message.
@@ -48,18 +48,20 @@ function deal() {
     let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
     for (let suit of cardsSuits) {
         for (let value of cardsValues) {
-            let card = {}
+            let card = {};
             card.name = value + "_of_" + suit;
             if (value.length < 3) {
                 card.value = parseInt(value);
+            } else if (value.length === 3) {
+                card.value = 11;
             } else {
                 card.value = 10;
             }
-            deck.push(card)
+            deck.push(card);
         }
     }
     // Shuffle deck
-    deck.sort(() => (Math.random() > .5) ? 1 : -1);
+    deck.sort(() => (Math.random() > 0.5) ? 1 : -1);
 
     // reset hands
     dealerHand.innerHTML = "";
@@ -137,7 +139,7 @@ function stand() {
         let newCard = deck.pop();
         dealerCards.push(newCard);
         dealerHand.innerHTML = "";
-        for (card of dealerCards) {
+        for (let card of dealerCards) {
             dealerHand.innerHTML += `
                 <img src="assets/images/deck/${card.name}.png" alt="A game card"></img>
             `;
@@ -147,7 +149,7 @@ function stand() {
 
         // Check if dealer won by points value
         if (dealerValue > playerValue && dealerValue < 22) {
-            let endGame = document.getElementById("end-game")
+            let endGame = document.getElementById("end-game");
             let bet = document.getElementById("bet").value;
             let wins = parseInt(document.getElementById("wins").innerText);
             endGame.innerHTML = "";
@@ -155,8 +157,8 @@ function stand() {
 
             // Adjust credit
             let credit = parseInt(document.getElementById("credit-left").innerText);
-            credit -= bet
-            wins -= bet
+            credit -= bet;
+            wins -= bet;
             document.getElementById("credit-left").innerText = credit;
             document.getElementById("wins").innerText = wins;
 
@@ -171,10 +173,10 @@ function stand() {
  * Check if any of the players got bust
  */
 function checkForBust() {
-    let endGame = document.getElementById("end-game")
+    let endGame = document.getElementById("end-game");
     let bet = parseInt(document.getElementById("bet").value);
     let wins = parseInt(document.getElementById("wins").innerText);
-    endGame.innerHTML = ""
+    endGame.innerHTML = "";
     if (playerValue > 21) {
         endGame.innerHTML += `<p>Bust! You lost ${bet}.</p>`;
 
@@ -200,7 +202,7 @@ function checkForBust() {
         endGame.style.display = "unset";
         document.getElementById("deal").addEventListener("click", deal);
     } else if (playerValue === dealerValue) {
-        endGame.innerHTML += "<p>It's a draw!</p>"
+        endGame.innerHTML += "<p>It's a draw!</p>";
         endGame.style.display = "unset";
         document.getElementById("deal").addEventListener("click", deal);
     }

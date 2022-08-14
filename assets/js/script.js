@@ -128,7 +128,7 @@ function hit() {
 }
 
 /**
- * deal cards to dealer
+ * deal cards to dealer and check if dealer won
  */
 function stand() {
     document.getElementById("stand").removeEventListener("click", stand);
@@ -144,31 +144,77 @@ function stand() {
         }
         showHandValue();
         checkForBust();
-        if (dealerValue > playerValue) {
+
+        // Check if dealer won by points value
+        if (dealerValue > playerValue && dealerValue < 22) {
             let endGame = document.getElementById("end-game")
             let bet = document.getElementById("bet").value;
+            let wins = parseInt(document.getElementById("wins").innerText);
+            endGame.innerHTML = "";
             endGame.innerHTML += `<p>Dealer won! You lost ${bet}.</p>`;
+
+            // Adjust credit
+            let credit = parseInt(document.getElementById("credit-left").innerText);
+            credit -= bet
+            wins -= bet
+            document.getElementById("credit-left").innerText = credit;
+            document.getElementById("wins").innerText = wins;
+
             endGame.style.display = "unset";
             document.getElementById("deal").addEventListener("click", deal);
         }
+        displayWins();
     }
 }
 
+/**
+ * Check if any of the players got bust
+ */
 function checkForBust() {
     let endGame = document.getElementById("end-game")
-    let bet = document.getElementById("bet").value;
+    let bet = parseInt(document.getElementById("bet").value);
+    let wins = parseInt(document.getElementById("wins").innerText);
     endGame.innerHTML = ""
     if (playerValue > 21) {
         endGame.innerHTML += `<p>Bust! You lost ${bet}.</p>`;
+
+        // Adjust credit
+        let credit = parseInt(document.getElementById("credit-left").innerText);
+        credit -= bet;
+        wins -= bet;
+        document.getElementById("credit-left").innerText = credit;
+        document.getElementById("wins").innerText = wins;
+
         endGame.style.display = "unset";
         document.getElementById("deal").addEventListener("click", deal);
     } else if (dealerValue > 21) {
         endGame.innerHTML += `<p>Dealer Bust! You won ${bet}!</p>`;
+
+        // Adjust credit
+        let credit = parseInt(document.getElementById("credit-left").innerText);
+        credit += bet;
+        wins += bet;
+        document.getElementById("credit-left").innerText = credit;
+        document.getElementById("wins").innerText = wins;
+
         endGame.style.display = "unset";
         document.getElementById("deal").addEventListener("click", deal);
     } else if (playerValue === dealerValue) {
         endGame.innerHTML += "<p>It's a draw!</p>"
         endGame.style.display = "unset";
         document.getElementById("deal").addEventListener("click", deal);
+    }
+    displayWins();
+}
+
+/**
+ * Change wins color for negative or positive values
+ */
+function displayWins () {
+    let wins = parseInt(document.getElementById("wins").innerText);
+    if (wins < 0) {
+        document.getElementById("wins").style.color = "#fa0000";
+    } else {
+        document.getElementById("wins").style.color = "green";
     }
 }

@@ -106,14 +106,16 @@ function showHandValue (){
     dealerValue = 0;
     for (let card of dealerCards){
         dealerValue += card.value;
-        dealerHandValue.innerText = dealerValue;
     }
+    dealerValue = checkForAce(dealerCards, dealerValue);
+     dealerHandValue.innerText = dealerValue;
 
     playerValue = 0;
     for (let card of playerCards){
         playerValue += card.value;
-        playerHandValue.innerText = playerValue;
     }
+    playerValue = checkForAce(playerCards, playerValue);
+    playerHandValue.innerText = playerValue;
 }
 
 /**
@@ -177,6 +179,7 @@ function checkForBust() {
     let bet = parseInt(document.getElementById("bet").value);
     let wins = parseInt(document.getElementById("wins").innerText);
     endGame.innerHTML = "";
+
     if (playerValue > 21) {
         endGame.innerHTML += `<p>Bust! You lost ${bet}.</p>`;
 
@@ -219,4 +222,22 @@ function displayWins () {
     } else {
         document.getElementById("wins").style.color = "green";
     }
+}
+
+/**
+ * Check if players hands have aces and adjust hand value if over 21
+ */
+function checkForAce (list, value) {
+    console.log(value);
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].value === 11 && value > 21) {
+            list[i].value = 1;
+        }
+    }
+    value = 0;
+    for (let card of list){
+        value += card.value;
+    }
+
+    return value;
 }

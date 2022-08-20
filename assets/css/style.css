@@ -54,7 +54,7 @@ body {
 #main-wrapper {
     height: fit-content;
     background-color: rgba(160, 155, 155, 0.3);
-    padding-top: 15px;
+    padding-top: 30px;
 }
 
 #credit-display {
@@ -71,7 +71,7 @@ body {
 }
 
 div {
-    height: 200px;
+    height: 180px;
 }
 
 #bet-section {
@@ -107,7 +107,7 @@ h1 {
 #buttons {
     margin-top: 10px;
     height: fit-content;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .button {
@@ -163,9 +163,32 @@ input {
     padding-bottom: 100px;
 }
 
+/* Footer */
+#footer {
+    height: 40px;
+    background-color: #ba8475;
+}
+
+#footer-container {
+    height: 40px;
+    width: 200px;
+    float: right;
+    margin-right: 20px;
+}
+
+#footer p {
+    font-size: 12px;
+    display: inline;
+}
+
+#footer a {
+    color: #281713;
+    font-size: 180%;
+}
+
 /* Feedback page */
 #contact {
-    height: 690px;
+    height: 730px;
 }
 
 #contact p {

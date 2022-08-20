@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -28,6 +29,23 @@
             </nav>
         </div>
     </header>
-    
+    <section id="contact">
+        <p>Your feedback will be appreciated.<br>
+            Tell us what you think about this game in the form below</p>
+        <div id="contact-form">
+            <form action="https://formdump.codeinstitute.net/" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" name="name" id="name" placeholder="Your Name*" required class="user-input"><br>
+
+                <label for="e-mail">E-mail:</label><br>
+                <input type="email" name="e-mail" id="e-mail" placeholder="Your E-mail*" required class="user-input"><br>
+
+                <label for="message">Your message:</label><br>
+                <textarea name="feedback" id="feedback" cols="50" rows="7" required placeholder="Type your message here"></textarea>
+
+                <input type="submit" value="Send" class="send-button">
+            </form>
+        </div>
+    </section>
 </body>
 </html>

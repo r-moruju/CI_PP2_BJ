@@ -34,6 +34,15 @@
     margin: 7px;
 }
 
+#navigation li a {
+    color: black;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    border-bottom: solid 2px black;
+}
+
 body {
     background: url(../images/main-background.png) center no-repeat;
     background-size: cover;
@@ -152,4 +161,71 @@ input {
 #message p {
     font-size: 18px;
     padding-bottom: 100px;
+}
+
+/* Feedback page */
+#contact {
+    height: 690px;
+}
+
+#contact p {
+    color: #fff4ee;
+    padding-top: 50px;
+}
+
+.user-input {
+    background: transparent;
+    border: 1px solid #fff4ee;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    font-size: 80%;
+    padding-left: 5px;
+    color: #fff4ee;
+}
+
+#contact-form {
+    height: 520px;
+    width: 60%;
+    margin-top: 50px;
+    position: absolute;
+    background-color: #281713;
+    left: 20%;
+    border-radius: 50px;
+}
+
+#contact-form form {
+    color: #fff4ee;
+    font-size: 130%;
+    width: 70%;
+    margin: 0;
+    position: absolute;
+    top: 3rem;
+    left: 15%;
+}
+
+#feedback {
+    background: transparent;
+    border: 1px solid #fff4ee;
+    width: 100%;
+    height: 200px;
+    font-family: 'Rubik Dirt', cursive;
+    font-size: 80%;
+    padding: 1%;
+    color: #fff4ee;
+}
+
+.send-button {
+    display: block;
+    margin-top: 40px;
+    background-color: #ba8475;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }

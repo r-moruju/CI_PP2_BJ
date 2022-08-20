@@ -207,7 +207,7 @@ input {
     color: #fff4ee;
 }
 
-#contact-form {
+#contact-form-wrapper {
     height: 520px;
     width: 60%;
     margin-top: 50px;
@@ -217,7 +217,7 @@ input {
     border-radius: 50px;
 }
 
-#contact-form form {
+#contact-form-wrapper form {
     color: #fff4ee;
     font-size: 130%;
     width: 70%;
@@ -250,5 +250,8 @@ input {
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
+}
 
+.send-button:hover {
+    background-color: #fa0000;
 }

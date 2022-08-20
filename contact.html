@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
@@ -32,15 +33,15 @@
     <section id="contact">
         <p>Your feedback will be appreciated.<br>
             Tell us what you think about this game in the form below</p>
-        <div id="contact-form">
-            <form action="https://formdump.codeinstitute.net/" method="post">
-                <label for="name">Name:</label><br>
-                <input type="text" name="name" id="name" placeholder="Your Name*" required class="user-input"><br>
+        <div id="contact-form-wrapper">
+            <form id="contact-form">
+                <label for="user_name">Name:</label><br>
+                <input type="text" name="user_name" id="user_name" placeholder="Your Name*" required class="user-input"><br>
 
-                <label for="e-mail">E-mail:</label><br>
-                <input type="email" name="e-mail" id="e-mail" placeholder="Your E-mail*" required class="user-input"><br>
+                <label for="user_email">E-mail:</label><br>
+                <input type="email" name="user_email" id="user_email" placeholder="Your E-mail*" required class="user-input"><br>
 
-                <label for="message">Your message:</label><br>
+                <label for="feedback">Your message:</label><br>
                 <textarea name="feedback" id="feedback" cols="50" rows="7" required placeholder="Type your message here"></textarea>
 
                 <input type="submit" value="Send" class="send-button">
@@ -58,5 +59,6 @@
     <!--Fontawesome script-->
     <script src="https://kit.fontawesome.com/b8f538975a.js" crossorigin="anonymous"></script>
     <!-- Custom script-->
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>

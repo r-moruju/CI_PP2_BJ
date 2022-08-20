@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("run-game").addEventListener("click", runGame);
 });
 
-document.addEventListener("click", closeModal);
+document.getElementsByClassName("close")[0].addEventListener("click", closeModal);
 
 /**
  * Clear the wellcome message.

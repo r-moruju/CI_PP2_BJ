@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 
+/* Set margin and padding to zero by default to everything */
 *{
     margin: 0;
     padding: 0;
@@ -137,7 +138,6 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff4ee;
-    /*display: none;*/
 }
 
 #end-game {

@@ -126,7 +126,7 @@ h1 {
 }
 
 /* Game tutorial */
-#message {
+#welcome-message {
     width: 400px;
     height: 600px;
     background-color: rgba(28, 25, 25, 0.9);
@@ -158,7 +158,7 @@ input {
     font-family: 'Rubik Dirt', cursive;
 }
 
-#message p {
+#welcome-message p {
     font-size: 18px;
     padding-bottom: 100px;
 }
@@ -227,7 +227,7 @@ input {
     left: 15%;
 }
 
-#feedback {
+#message {
     background: transparent;
     border: 1px solid #fff4ee;
     width: 100%;
@@ -254,4 +254,35 @@ input {
 
 .send-button:hover {
     background-color: #fa0000;
+}
+
+#response {
+    width: 400px;
+    height: 200px;
+    background-color: rgba(28, 25, 25, 0.9);
+    padding: 30px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff4ee;
+    display: none;
+}
+
+.close {
+    color: #fff4ee;
+    float: right;
+    font-size: 18px;
+  }
+
+.close:hover,
+.close:focus {
+  color: #fa0000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#response-message {
+    line-height: 180px;
 }

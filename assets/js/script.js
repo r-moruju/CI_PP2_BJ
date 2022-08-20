@@ -21,7 +21,7 @@ function runGame() {
     document.getElementById("deal").addEventListener("click", deal);
     let credit = document.getElementById("credit").value;
     let playerName = document.getElementById("player-name").value;
-    document.getElementById("message").style.display = "none";
+    document.getElementById("welcome-message").style.display = "none";
     if (credit.length < 2) {
         document.getElementById("credit-left").innerText = "20";
     } else {

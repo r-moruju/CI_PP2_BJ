@@ -46,14 +46,17 @@ function deal() {
     document.getElementById("end-game").style.display = "none";
     let cardsSuits = ["clubs", "diamonds", "hearts", "spades"];
     let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
+    // Create deck
     for (let suit of cardsSuits) {
         for (let value of cardsValues) {
             let card = {};
             card.name = value + "_of_" + suit;
             if (value.length < 3) {
                 card.value = parseInt(value);
+            // Set ace value to 11
             } else if (value.length === 3) {
                 card.value = 11;
+            // Set face cards value to 10
             } else {
                 card.value = 10;
             }
@@ -178,10 +181,15 @@ function checkForBust() {
     let endGame = document.getElementById("end-game");
     let bet = parseInt(document.getElementById("bet").value);
     let wins = parseInt(document.getElementById("wins").innerText);
+
+    // Reset modal window
     endGame.innerHTML = "";
 
     if (playerValue > 21) {
         endGame.innerHTML += `<p>Bust! You lost ${bet}.</p>`;
+        // Silence listeners
+        document.getElementById("stand").removeEventListener("click", stand);
+        document.getElementById("hit").removeEventListener("click", hit);
 
         // Adjust credit
         let credit = parseInt(document.getElementById("credit-left").innerText);
@@ -228,7 +236,6 @@ function displayWins () {
  * Check if players hands have aces and adjust hand value if over 21
  */
 function checkForAce (list, value) {
-    console.log(value);
     for (let i = 0; i < list.length; i++) {
         if (list[i].value === 11 && value > 21) {
             list[i].value = 1;

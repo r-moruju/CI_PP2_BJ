@@ -184,6 +184,14 @@ input {
     display: none;
 }
 
+#sign {
+    width: 150px;
+    height: 30px;
+    font-family: cursive;
+    background-color: #ba8475;
+    font-size: 16px;
+  }
+
 #astro-result {
     overflow: auto;
     height: 260px;

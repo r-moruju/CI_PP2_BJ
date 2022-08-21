@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="A blackjack game website">
+    <meta name="keywords" content="blackjack, casino, light blackjack, blackjack quiz">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
     <title>BlackJack</title>
 </head>
 <body>
@@ -32,7 +34,7 @@
         </div>
     </header>
     <div id="main-wrapper">
-        <!-- Modal-->
+        <!-- welcome modal-->
         <div id="welcome-message">
             <h2>Wellcome to BlackJack!</h2>
             <p>This is a light version of blackjack game.
@@ -41,13 +43,13 @@
                 Click "Hit" to add another card to your hand. Try to get as close as possible to 21, but not over because you will lose. 
                 When you are satisfied with the value of your hands, click "Stand" and wait for the dealer's turn.<br> 
                 Whoever has the highest score wins.</p><br>
-            <label for="player-name">Enter your name:</label>
+            <label for="player-name">Your name: </label>
             <input type="text" id="player-name"><br><br>
             <label for="credit">Your credit:</label>
             <input type="number" id="credit"><br>
             <button type="submit" id="run-game" class="button">Ok</button>
         </div>
-        <!-- Modal-->
+        <!--Hand end modal-->
         <div id="end-game">
             <span class="close">&times;</span>
             <p id="alert"></p>

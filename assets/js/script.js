@@ -74,7 +74,8 @@ function deal() {
     playerHand.innerHTML = "";
     playerCards = [];
     dealerCards = [];
-
+    
+    checkForCredit()
     dealCardsFromDeck();
     showHandValue();
 }
@@ -255,17 +256,19 @@ function checkForAce (list, value) {
  * Check if player have enough credit
  */
 function checkForCredit() {
-    let endGame = document.getElementById("end-game");
-    let alert = document.getElementById("alert");
     let bet = parseInt(document.getElementById("bet").value);
     let credit = parseInt(document.getElementById("credit-left").innerText);
 
     if (bet > credit) {
-        console.log("bet bigger then credit");
-        console.log(credit);
-        alert.innerText = `You are out of credit`;
-        endGame.style.display = "unset";
+        document.getElementById("alert").innerHTML = `<p>You are out of credit</p><p>Back <a href="index.html">home</a></p><p>Or change bet</p>`;
+        document.getElementById("end-game").style.height = "200px";
+        document.getElementById("end-game").style.display = "unset";
+        javascript_abort();
     }
+}
+
+function javascript_abort() {
+    throw new Error('This is not an error. This is just to abort javascript');
 }
 
 /**

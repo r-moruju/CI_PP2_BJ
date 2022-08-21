@@ -126,10 +126,6 @@ h1 {
     background-color: #fa0000;
 }
 
-.no-hover {
-    background-color: #ba8475;
-}
-
 /* Game welcome message */
 #welcome-message {
     width: 400px;

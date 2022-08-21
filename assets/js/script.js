@@ -297,7 +297,6 @@ function javascript_abort() {
 function disableListener (id, func) {
     document.getElementById(id).removeEventListener("click", func);
     document.getElementById(id).classList.remove("hover");
-    document.getElementById(id).classList.add("no-hover");
 }
 
 /**
@@ -307,6 +306,5 @@ function disableListener (id, func) {
  */
 function enableListener (id, func) {
     document.getElementById(id).addEventListener("click", func);
-    document.getElementById(id).classList.remove("no-hover");
     document.getElementById(id).classList.add("hover");
 }

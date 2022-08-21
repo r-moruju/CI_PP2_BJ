@@ -188,6 +188,19 @@ input {
     display: none;
 }
 
+#astro-result {
+    overflow: auto;
+    height: 260px;
+}
+
+#close-luck {
+    margin-top: 50px;
+}
+
+#luck-run {
+    margin: 20px;
+}
+
 /* Footer */
 #footer {
     height: 40px;

@@ -185,6 +185,7 @@ input {
     transform: translate(-50%, -50%);
     color: #fff4ee;
     font-family: cursive;
+    display: none;
 }
 
 /* Footer */

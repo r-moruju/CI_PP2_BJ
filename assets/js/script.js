@@ -49,6 +49,8 @@ function deal() {
     document.getElementById("end-game").style.display = "none";
     let cardsSuits = ["clubs", "diamonds", "hearts", "spades"];
     let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
+    // Reset deck
+    deck = [];
     // Create deck
     for (let suit of cardsSuits) {
         for (let value of cardsValues) {
@@ -267,6 +269,9 @@ function checkForCredit() {
     }
 }
 
+/**
+ * This is to abort javascript in case credit is low
+ */
 function javascript_abort() {
     throw new Error('This is not an error. This is just to abort javascript');
 }

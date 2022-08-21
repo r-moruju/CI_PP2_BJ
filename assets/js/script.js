@@ -270,14 +270,14 @@ function checkForCredit() {
         document.getElementById("alert").innerHTML = `<p>You are out of credit</p><p>Back <a href="index.html">home</a></p><p>Or change bet</p>`;
         document.getElementById("end-game").style.height = "200px";
         document.getElementById("end-game").style.display = "unset";
-        javascript_abort();
+        javascriptAbort();
     }
 }
 
 /**
  * This is to abort javascript in case credit is low
  */
-function javascript_abort() {
+function javascriptAbort() {
     throw new Error('This is not an error. This is just to abort javascript');
 }
 

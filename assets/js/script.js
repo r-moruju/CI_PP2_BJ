@@ -20,7 +20,9 @@ document.getElementsByClassName("close")[0].addEventListener("click", closeModal
  * Get player name and credit.
  */
 function runGame() {
-    document.getElementById("deal").addEventListener("click", deal);
+    enableListener("deal", deal);
+    disableListener("hit", hit);
+    disableListener("stand" ,stand);
     let credit = document.getElementById("credit").value;
     let playerName = document.getElementById("player-name").value;
     document.getElementById("welcome-message").style.display = "none";
@@ -43,9 +45,9 @@ function runGame() {
  */
 function deal() {
     checkForCredit()
-    document.getElementById("hit").addEventListener("click", hit);
-    document.getElementById("stand").addEventListener("click", stand);
-    document.getElementById("deal").removeEventListener("click", deal);
+    enableListener("hit", hit);
+    enableListener("stand", stand);
+    disableListener("deal", deal);
     document.getElementById("end-game").style.display = "none";
     let cardsSuits = ["clubs", "diamonds", "hearts", "spades"];
     let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
@@ -144,8 +146,8 @@ function hit() {
  * deal cards to dealer and check if dealer won
  */
 function stand() {
-    document.getElementById("stand").removeEventListener("click", stand);
-    document.getElementById("hit").removeEventListener("click", hit);
+    disableListener ("stand", stand);
+    disableListener ("hit", hit);
     while (dealerValue < playerValue && dealerValue < 21) {
         let newCard = deck.pop();
         dealerCards.push(newCard);
@@ -175,7 +177,7 @@ function stand() {
             document.getElementById("wins").innerText = wins;
 
             endGame.style.display = "unset";
-            document.getElementById("deal").addEventListener("click", deal);
+            enableListener("deal", deal);
         }
         displayWins();
     }
@@ -193,8 +195,8 @@ function checkForBust() {
     if (playerValue > 21) {
         alert.innerText = `Bust! You lost ${bet}.`;
         // Silence listeners
-        document.getElementById("stand").removeEventListener("click", stand);
-        document.getElementById("hit").removeEventListener("click", hit);
+        disableListener("stand", stand);
+        disableListener("hit", hit)
 
         // Adjust credit
         let credit = parseInt(document.getElementById("credit-left").innerText);
@@ -204,7 +206,7 @@ function checkForBust() {
         document.getElementById("wins").innerText = wins;
 
         endGame.style.display = "unset";
-        document.getElementById("deal").addEventListener("click", deal);
+        enableListener("deal", deal);
     } else if (dealerValue > 21) {
         alert.innerText = `Dealer Bust! You won ${bet}!`;
 
@@ -216,11 +218,11 @@ function checkForBust() {
         document.getElementById("wins").innerText = wins;
 
         endGame.style.display = "unset";
-        document.getElementById("deal").addEventListener("click", deal);
+        enableListener("deal", deal);
     } else if (playerValue === dealerValue) {
         alert.innerText = "It's a draw!";
         endGame.style.display = "unset";
-        document.getElementById("deal").addEventListener("click", deal);
+        enableListener("deal", deal);
     }
     displayWins();
 }
@@ -239,6 +241,9 @@ function displayWins () {
 
 /**
  * Check if players hands have aces and adjust hand value if over 21
+ * @param {*} list Player cards
+ * @param {*} value Player cards value
+ * @returns New updated cards value
  */
 function checkForAce (list, value) {
     for (let i = 0; i < list.length; i++) {
@@ -282,4 +287,26 @@ function javascript_abort() {
  function closeModal() {
     let endGame = document.getElementById("end-game");
     endGame.style.display = "none";
+}
+
+/**
+ * Remove event listener and ajust css hover feature
+ * @param {*} id targeted id 
+ * @param {*} func function to be removed from listener
+ */
+function disableListener (id, func) {
+    document.getElementById(id).removeEventListener("click", func);
+    document.getElementById(id).classList.remove("hover");
+    document.getElementById(id).classList.add("no-hover");
+}
+
+/**
+ * Add event listener and ajust css hover feature
+ * @param {*} id targeted id
+ * @param {*} func function to be executed when listener trigger
+ */
+function enableListener (id, func) {
+    document.getElementById(id).addEventListener("click", func);
+    document.getElementById(id).classList.remove("no-hover");
+    document.getElementById(id).classList.add("hover");
 }

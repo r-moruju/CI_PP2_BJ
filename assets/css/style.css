@@ -121,9 +121,13 @@ h1 {
     border: none;
 }
 
-.button:hover,
-.button:active {
+.hover:hover,
+.hover:active {
     background-color: #fa0000;
+}
+
+.no-hover {
+    background-color: #ba8475;
 }
 
 /* Game welcome message */

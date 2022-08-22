@@ -22,7 +22,6 @@
                         <li>
                             <a href="quiz.html">Quiz</a>
                         </li>
-                        <li>Luck</li>
                         <li>
                             <a href="contact.html#">Feedback</a>
                         </li>
@@ -31,6 +30,47 @@
             </nav>
         </div>
     </header>
+    <section id="quiz-main">
+        <div id="quiz-wrapper">
+            <h2>Blackjack Quiz</h2>
+            <p>Let's test your blackjack skills</p>
+            <div id="questions">
+                <div id="progres">
+                    <p>Question <span id="question-number">1</span> of 10</p>
+                </div>
+                <p id="question-text"></p>
+                <div id="options-div">
+                    <ul id="question-options">
+                        <li>
+                            <label>
+                                <input type=radio value="a" name="question-1">
+                                Hit 
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type=radio value="b" name="question-1">
+                                Hit 
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type=radio value="c" name="question-1">
+                                Hit 
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type=radio value="d" name="question-1">
+                                Hit 
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <button id="next-question" class="button" type="submit">Next</button>
+            </div>
+        </div>
+    </section>
     <footer>
         <div id="footer">
             <div id="footer-container">
@@ -42,5 +82,6 @@
     <!--Fontawesome script-->
     <script src="https://kit.fontawesome.com/b8f538975a.js" crossorigin="anonymous"></script>
     <!-- Custom script-->
+    <script src="assets/js/quiz.js"></script>
 </body>
 </html>

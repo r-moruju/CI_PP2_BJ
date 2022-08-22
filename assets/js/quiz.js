@@ -70,3 +70,10 @@ let questions = [
         answer: "False"
     }
 ]
+
+let questionText = document.getElementById("question-text");
+let questionOptions = document.getElementById("question-options");
+
+questionText.innerText = questions[0].question;
+
+console.log(questions[9].c)

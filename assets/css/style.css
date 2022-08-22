@@ -328,3 +328,56 @@ input {
 #response-message {
     line-height: 180px;
 }
+
+/* Quiz page */
+#quiz-main {
+    height: fit-content;
+    background-color: rgba(160, 155, 155, 0.3);
+    padding-top: 30px
+}
+
+#quiz-wrapper {
+    height: 550px;
+}
+
+#questions {
+    text-align: left;
+    background-color: #ba8475;
+    width: 700px;
+    height: 400px;
+    border-radius: 5px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: cursive;
+}
+
+#progres {
+    height: 60px;
+}
+
+#options-div {
+    width: 90%;
+    left: 5%;
+    position: absolute;
+    height: fit-content;
+    border: #fa0000;
+    border-style: solid;
+}
+
+#question-options li {
+    padding: 5px;
+    list-style: none;
+}
+
+#next-question {
+    position: absolute;
+    background-color: #fff4ee;
+    bottom: 20px;
+    right: 30px;
+}
+
+#next-question:hover {
+    background-color: #fa0000;
+}

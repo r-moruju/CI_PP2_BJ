@@ -92,7 +92,53 @@ let questions = [
 
 let questionText = document.getElementById("question-text");
 let questionOptions = document.getElementById("question-options");
+let questionNumber = 0;
+let correctAnswers = 0;
 
-questionText.innerText = questions[0].question;
 
-console.log(questions[9].c)
+document.getElementById("next-question").addEventListener("click", nextQuestion);
+document.getElementById("quiz-start").addEventListener("click",startQuiz);
+
+function nextQuestion() {
+    questionText.innerText = questions[questionNumber].question;
+    questionOptions.innerHTML = "";
+    for (let choice of questions[questionNumber].choices){
+        questionOptions.innerHTML += `
+            <li>
+               <input type=radio value="${choice}" name="question-${questionNumber +1}">
+                ${choice}
+            </li>
+        `;
+    }
+    checkAnswer();
+    document.getElementById("question-number").innerText = questionNumber + 1;
+    questionNumber += 1;
+}
+
+function checkAnswer() {
+    let selection = document.getElementsByTagName("input");
+    for (let element of selection){
+        if (element.checked) {
+            console.log(element.value);
+            if (element.value === questions[questionNumber].answer){
+                correctAnswers += 1;
+                console.log("Match");
+                console.log(correctAnswers);
+            }
+        }
+    }
+}
+
+/**
+ * This is to abort javascript in case credit is low
+ */
+ function javascriptAbort() {
+    throw new Error('This is not an error. This is just to abort javascript');
+}
+
+function startQuiz () {
+    questions.sort(() => (Math.random() > 0.5) ? 1 : -1);
+    document.getElementById("questions").style.display = "unset"
+    checkAnswer();
+    nextQuestion();
+}

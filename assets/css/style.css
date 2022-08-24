@@ -340,6 +340,12 @@ input {
     height: 550px;
 }
 
+#quiz-start {
+    position: absolute;
+    top: 40%;
+    transform: translate(-90%, -50%);
+}
+
 #questions {
     text-align: left;
     background-color: #ba8475;
@@ -351,6 +357,7 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: cursive;
+    display: none;
 }
 
 #progres {

@@ -79,7 +79,7 @@ function deal() {
     playerCards = [];
     dealerCards = [];
     
-    checkForCredit()
+    checkForCredit();
     dealCardsFromDeck();
     showHandValue();
 }

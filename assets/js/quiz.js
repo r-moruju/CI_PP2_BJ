@@ -1,3 +1,4 @@
+// Array with quiz questions
 let questions = [
     {
         question: "If you get a pair of Aces, you should always__?",
@@ -90,16 +91,21 @@ let questions = [
     }
 ]
 
+// Declare global variables
 let questionText = document.getElementById("question-text");
 let questionOptions = document.getElementById("question-options");
 let questionNumber = 0;
 let correctAnswers = 0;
 
-
+// Add event listeners
 document.getElementById("next-question").addEventListener("click", nextQuestion);
 document.getElementById("quiz-start").addEventListener("click",startQuiz);
 
+/**
+ * Get a question from the question list and display it on the screen
+ */
 function nextQuestion() {
+    checkAnswer();
     questionText.innerText = questions[questionNumber].question;
     questionOptions.innerHTML = "";
     for (let choice of questions[questionNumber].choices){
@@ -110,17 +116,19 @@ function nextQuestion() {
             </li>
         `;
     }
-    checkAnswer();
     document.getElementById("question-number").innerText = questionNumber + 1;
     questionNumber += 1;
 }
 
+/**
+ * Check if the user's selection matches the answer to the question
+ */
 function checkAnswer() {
     let selection = document.getElementsByTagName("input");
     for (let element of selection){
         if (element.checked) {
             console.log(element.value);
-            if (element.value === questions[questionNumber].answer){
+            if (element.value === questions[questionNumber-1].answer){
                 correctAnswers += 1;
                 console.log("Match");
                 console.log(correctAnswers);
@@ -130,15 +138,10 @@ function checkAnswer() {
 }
 
 /**
- * This is to abort javascript in case credit is low
+ * Shuffle the list of questions and display the next question by calling the "nextQuestion" function.
  */
- function javascriptAbort() {
-    throw new Error('This is not an error. This is just to abort javascript');
-}
-
 function startQuiz () {
     questions.sort(() => (Math.random() > 0.5) ? 1 : -1);
     document.getElementById("questions").style.display = "unset"
-    checkAnswer();
     nextQuestion();
 }

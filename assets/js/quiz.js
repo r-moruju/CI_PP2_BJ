@@ -92,10 +92,11 @@ let questions = [
 ]
 
 // Declare global variables
-let questionText = document.getElementById("question-text");
-let questionOptions = document.getElementById("question-options");
+let questionText = document.getElementsByClassName("question-text")[0];
+let questionOptions = document.getElementsByClassName("question-options")[0];
 let questionNumber = 0;
 let correctAnswers = 0;
+let allQuestionsAtTheEnd = "";
 
 // Add event listeners
 document.getElementById("next-question").addEventListener("click", nextQuestion);
@@ -118,6 +119,13 @@ function nextQuestion() {
     }
     document.getElementById("question-number").innerText = questionNumber + 1;
     questionNumber += 1;
+    document.getElementById("next-question").removeEventListener("click", nextQuestion);
+    document.getElementById("next-question").classList.remove = "hover";
+    let selection = document.getElementsByTagName("input");
+    for (let element of selection){
+        element.addEventListener("click", reactivateNext);
+    }
+    checkLastQuestion();
 }
 
 /**
@@ -144,4 +152,26 @@ function startQuiz () {
     questions.sort(() => (Math.random() > 0.5) ? 1 : -1);
     document.getElementById("questions").style.display = "unset"
     nextQuestion();
+}
+
+function checkLastQuestion () {
+    if(questionNumber === 10){
+        document.getElementById("next-question").removeEventListener("click", nextQuestion);
+        document.getElementById("next-question").innerText = "See Results";
+        document.getElementById("next-question").addEventListener("click", seeResults);
+    }
+}
+
+function seeResults () {
+    checkAnswer();
+    let percentage = (correctAnswers / 10) * 100;
+    document.getElementById("questions").innerHTML = `
+        <p>You scored ${percentage}%</p>
+    `;
+    document.getElementById("questions").style.textAlign = "center";
+}
+
+function reactivateNext () {
+    document.getElementById("next-question").addEventListener("click", nextQuestion);
+    document.getElementById("next-question").classList.add= "hover";
 }

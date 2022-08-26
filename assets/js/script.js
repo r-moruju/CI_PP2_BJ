@@ -273,7 +273,7 @@ function checkForCredit() {
 
     if (bet > credit) {
         document.getElementById("alert").innerHTML = `<p>You are out of credit</p><p>Back <a href="index.html">home</a></p><p>Or change bet</p>`;
-        document.getElementById("end-game").style.height = "200px";
+        //document.getElementById("end-game").style.height = "200px";
         document.getElementById("end-game").style.display = "unset";
         javascriptAbort();
     }

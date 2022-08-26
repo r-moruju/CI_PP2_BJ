@@ -45,6 +45,7 @@ function runGame() {
  */
 function deal() {
     checkForCredit()
+    disableBet();
     enableListener("hit", hit);
     enableListener("stand", stand);
     disableListener("deal", deal);
@@ -178,6 +179,7 @@ function stand() {
 
             endGame.style.display = "unset";
             enableListener("deal", deal);
+            enableBet();
         }
         displayWins();
     }
@@ -206,6 +208,7 @@ function checkForBust() {
         document.getElementById("wins").innerText = wins;
 
         endGame.style.display = "unset";
+        enableBet();
         enableListener("deal", deal);
     } else if (dealerValue > 21) {
         alert.innerText = `Dealer Bust! You won ${bet}!`;
@@ -218,10 +221,12 @@ function checkForBust() {
         document.getElementById("wins").innerText = wins;
 
         endGame.style.display = "unset";
+        enableBet();
         enableListener("deal", deal);
     } else if (playerValue === dealerValue) {
         alert.innerText = "It's a draw!";
         endGame.style.display = "unset";
+        enableBet();
         enableListener("deal", deal);
     }
     displayWins();
@@ -307,4 +312,15 @@ function disableListener (id, func) {
 function enableListener (id, func) {
     document.getElementById(id).addEventListener("click", func);
     document.getElementById(id).classList.add("hover");
+}
+
+/**
+ * Disable select element to lock in the bet
+ */
+function disableBet () {
+    document.getElementById("bet").setAttribute("disabled", "");
+}
+
+function enableBet () {
+    document.getElementById("bet").removeAttribute("disabled");
 }

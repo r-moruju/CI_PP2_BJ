@@ -119,8 +119,11 @@ function nextQuestion() {
     }
     document.getElementById("question-number").innerText = questionNumber + 1;
     questionNumber += 1;
+    // Disable "Next" button
     document.getElementById("next-question").removeEventListener("click", nextQuestion);
     document.getElementById("next-question").classList.remove = "hover";
+
+    // Re-enable the "Next" button after a selection has been made
     let selection = document.getElementsByTagName("input");
     for (let element of selection){
         element.addEventListener("click", reactivateNext);
@@ -154,6 +157,9 @@ function startQuiz () {
     nextQuestion();
 }
 
+/**
+ * Check if the quiz has reached the last question and change the "next question" button.
+ */
 function checkLastQuestion () {
     if(questionNumber === 10){
         document.getElementById("next-question").removeEventListener("click", nextQuestion);
@@ -162,6 +168,9 @@ function checkLastQuestion () {
     }
 }
 
+/**
+ * Calculate the results and display them on the screen 
+ */
 function seeResults () {
     checkAnswer();
     let percentage = (correctAnswers / 10) * 100;
@@ -171,6 +180,10 @@ function seeResults () {
     document.getElementById("questions").style.textAlign = "center";
 }
 
+
+/**
+ * Re-enable the "Next" button
+ */
 function reactivateNext () {
     document.getElementById("next-question").addEventListener("click", nextQuestion);
     document.getElementById("next-question").classList.add= "hover";

@@ -121,7 +121,7 @@ function nextQuestion() {
     questionNumber += 1;
     // Disable "Next" button
     document.getElementById("next-question").removeEventListener("click", nextQuestion);
-    document.getElementById("next-question").classList.remove = "hover";
+    document.getElementById("next-question").classList.remove("hover");
 
     // Re-enable the "Next" button after a selection has been made
     let selection = document.getElementsByTagName("input");
@@ -186,5 +186,5 @@ function seeResults () {
  */
 function reactivateNext () {
     document.getElementById("next-question").addEventListener("click", nextQuestion);
-    document.getElementById("next-question").classList.add= "hover";
+    document.getElementById("next-question").classList.add("hover");
 }

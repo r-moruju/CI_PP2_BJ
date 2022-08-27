@@ -139,6 +139,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff4ee;
+    z-index: 1;
 }
 
 #end-game {
@@ -183,6 +184,7 @@ input {
     color: #fff4ee;
     font-family: cursive;
     display: none;
+    z-index: 1;
 }
 
 #sign {
@@ -456,5 +458,27 @@ input {
 
     h1 {
         font-size: 26px;
+    }
+
+    #end-game {
+        width: 230px;
+    }
+
+    #luck {
+        width: 250px;
+        height: fit-content;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    #close-luck {
+        margin-top: 0px;
+    }
+
+    #sign {
+        height: 20px;
+        font-size: 12px;
     }
 }

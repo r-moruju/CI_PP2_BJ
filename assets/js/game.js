@@ -319,7 +319,7 @@ function enableListener (id, func) {
  * Disable select element to lock in the bet
  */
 function disableBet () {
-    document.getElementById("bet").setAttribute("disabled");
+    document.getElementById("bet").setAttribute("disabled", "");
 }
 
 /**

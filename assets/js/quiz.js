@@ -196,7 +196,7 @@ function seeResults () {
         `
     }
     document.getElementById("questions").innerHTML += `<a href="index.html">Return Home</a>`;
-    document.getElementById("questions").innerHTML += `<a href="quiz.html">Quiz</a>`;
+    document.getElementById("questions").innerHTML += `<a href="quiz.html">Re-do Quiz</a>`;
     document.getElementById("questions").style.overflow = "auto";
 }
 

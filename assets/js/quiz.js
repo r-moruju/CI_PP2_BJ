@@ -103,6 +103,15 @@ document.getElementById("next-question").addEventListener("click", nextQuestion)
 document.getElementById("quiz-start").addEventListener("click",startQuiz);
 
 /**
+ * Shuffle the list of questions and display the next question by calling the "nextQuestion" function.
+ */
+ function startQuiz () {
+    questions.sort(() => (Math.random() > 0.5) ? 1 : -1);
+    document.getElementById("questions").style.display = "unset"
+    nextQuestion();
+}
+
+/**
  * Get a question from the question list and display it on the screen
  */
 function nextQuestion() {
@@ -121,7 +130,7 @@ function nextQuestion() {
     questionNumber += 1;
     // Disable "Next" button
     document.getElementById("next-question").removeEventListener("click", nextQuestion);
-    document.getElementById("next-question").classList.remove("hover");
+    //document.getElementById("next-question").classList.remove("hover");
 
     // Re-enable the "Next" button after a selection has been made
     let selection = document.getElementsByTagName("input");
@@ -138,23 +147,11 @@ function checkAnswer() {
     let selection = document.getElementsByTagName("input");
     for (let element of selection){
         if (element.checked) {
-            console.log(element.value);
             if (element.value === questions[questionNumber-1].answer){
                 correctAnswers += 1;
-                console.log("Match");
-                console.log(correctAnswers);
             }
         }
     }
-}
-
-/**
- * Shuffle the list of questions and display the next question by calling the "nextQuestion" function.
- */
-function startQuiz () {
-    questions.sort(() => (Math.random() > 0.5) ? 1 : -1);
-    document.getElementById("questions").style.display = "unset"
-    nextQuestion();
 }
 
 /**
@@ -177,7 +174,23 @@ function seeResults () {
     document.getElementById("questions").innerHTML = `
         <p>You scored ${percentage}%</p>
     `;
-    document.getElementById("questions").style.textAlign = "center";
+    //Loop through the questions and display them on the screen along with the answer
+    for (let item of questions){
+        let questionChoices = "";
+        for( let choice of item.choices){
+            questionChoices += `
+                <li>${choice}</li>
+            `
+        }
+        document.getElementById("questions").innerHTML += `
+            <div class="question-end">
+                <p>${item.question}</p>
+                <ul>${questionChoices}</ul>
+                <p class="question-end-answer">Correct answer is <strong>${item.answer}</strong></p>
+            </div>
+        `
+    }
+    document.getElementById("questions").style.overflow = "auto";
 }
 
 

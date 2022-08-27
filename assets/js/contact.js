@@ -4,7 +4,7 @@ let close = document.getElementsByClassName("close")[0];
 
 close.addEventListener("click", closeModal);
 
-//Emailjs code
+//Emailjs code (https://www.emailjs.com/)
 (function() {
     // Connect with emailjs
     emailjs.init('f7Jb5kjzdhjwsKmjT');

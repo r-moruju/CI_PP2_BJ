@@ -26,6 +26,7 @@ function runGame() {
     let credit = document.getElementById("credit").value;
     let playerName = document.getElementById("player-name").value;
     document.getElementById("welcome-message").style.display = "none";
+    // Error handdle if user does not enter any detail
     if (credit.length < 2) {
         document.getElementById("credit-left").innerText = "20";
     } else {
@@ -318,9 +319,12 @@ function enableListener (id, func) {
  * Disable select element to lock in the bet
  */
 function disableBet () {
-    document.getElementById("bet").setAttribute("disabled", "");
+    document.getElementById("bet").setAttribute("disabled");
 }
 
+/**
+ * Re-Enable select element
+ */
 function enableBet () {
     document.getElementById("bet").removeAttribute("disabled");
 }

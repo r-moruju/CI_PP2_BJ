@@ -195,6 +195,7 @@ function seeResults () {
             </div>
         `
     }
+    // Add links at the end of questions list
     document.getElementById("questions").innerHTML += `<a href="index.html">Return Home</a>`;
     document.getElementById("questions").innerHTML += `<a href="quiz.html">Re-do Quiz</a>`;
     document.getElementById("questions").style.overflow = "auto";

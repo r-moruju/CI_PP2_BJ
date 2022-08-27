@@ -424,6 +424,7 @@ input {
 
 /* Media Query for small size screens */
 @media screen and (max-width: 500px) {
+
     /* Home page */
     #welcome-message {
         width: 300px;
@@ -515,5 +516,15 @@ input {
     #questions a {
         font-size: 15px;
         width: 38%;
+    }
+
+    /* Feedbak page */
+    #contact-form-wrapper form {
+        font-size: 80%;
+    }
+
+    #contact-form-wrapper {
+        width: 90%;
+        left: 5%;
     }
 }

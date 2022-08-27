@@ -138,6 +138,8 @@ function nextQuestion() {
         // Re-enable only if not last question
         if(questionNumber !== 10){
             element.addEventListener("click", reactivateNext);
+        } else {
+            document.getElementById("next-question").classList.add("hover");
         }
     }
     checkLastQuestion();
@@ -193,6 +195,8 @@ function seeResults () {
             </div>
         `
     }
+    document.getElementById("questions").innerHTML += `<a href="index.html">Return Home</a>`;
+    document.getElementById("questions").innerHTML += `<a href="quiz.html">Quiz</a>`;
     document.getElementById("questions").style.overflow = "auto";
 }
 

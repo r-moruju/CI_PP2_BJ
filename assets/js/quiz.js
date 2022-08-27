@@ -130,12 +130,15 @@ function nextQuestion() {
     questionNumber += 1;
     // Disable "Next" button
     document.getElementById("next-question").removeEventListener("click", nextQuestion);
-    //document.getElementById("next-question").classList.remove("hover");
+    document.getElementById("next-question").classList.remove("hover");
 
     // Re-enable the "Next" button after a selection has been made
     let selection = document.getElementsByTagName("input");
     for (let element of selection){
-        element.addEventListener("click", reactivateNext);
+        // Re-enable only if not last question
+        if(questionNumber !== 10){
+            element.addEventListener("click", reactivateNext);
+        }
     }
     checkLastQuestion();
 }

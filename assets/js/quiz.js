@@ -107,7 +107,8 @@ document.getElementById("quiz-start").addEventListener("click",startQuiz);
  */
  function startQuiz () {
     questions.sort(() => (Math.random() > 0.5) ? 1 : -1);
-    document.getElementById("questions").style.display = "unset"
+    document.getElementById("questions").style.display = "unset";
+    document.getElementById("quiz-start").style.display = "none";
     nextQuestion();
 }
 

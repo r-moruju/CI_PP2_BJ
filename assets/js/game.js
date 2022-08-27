@@ -7,6 +7,9 @@ let dealerHand = document.getElementById("dealer-hand");
 let playerHand = document.getElementById("player-hand");
 let dealerValue = 0;
 let playerValue = 0;
+let screenSize = screen.width;
+
+console.log(screenSize);
 
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
@@ -190,6 +193,8 @@ function stand() {
  * Check if any of the players got bust
  */
 function checkForBust() {
+    addResponsiveness("dealer-hand");
+    addResponsiveness("player-hand");
     let endGame = document.getElementById("end-game");
     let alert = document.getElementById("alert");
     let bet = parseInt(document.getElementById("bet").value);
@@ -327,4 +332,27 @@ function disableBet () {
  */
 function enableBet () {
     document.getElementById("bet").removeAttribute("disabled");
+}
+
+/**
+ * This funtion check the screen size and number of players card in hand
+ * and adjust css for responsiveness
+ * @param {*} id targeted id
+ */
+function addResponsiveness(id) {
+    let imgChildrens = document.getElementById(id).children;
+    let ofSetLeft = 10;
+    if (screenSize < 750 & imgChildrens.length > 3){
+        for( let img of imgChildrens){
+            img.style.position = "absolute"
+            img.style.left = `${ofSetLeft}%`
+            ofSetLeft += 10;
+        }
+    } else if (screenSize < 400 & imgChildrens.length > 2){
+        for( let img of imgChildrens){
+            img.style.position = "absolute"
+            img.style.left = `${ofSetLeft}%`
+            ofSetLeft += 10;
+        }
+    }
 }

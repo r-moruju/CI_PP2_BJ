@@ -6,17 +6,31 @@
     padding: 0;
 }
 
+body {
+    background: url(../images/main-background.png) center no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Rubik Dirt', cursive;
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+  }
+
+
 /* Header and navigation */
 #header {
     height: fit-content;
     background-color: #ba8475;
     padding-bottom: 20px;
+    position: relative;
 }
 
 #navigation {
     height: 50px;
     position: absolute;
-    top: 6%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -44,13 +58,6 @@
     border-bottom: solid 2px black;
 }
 
-body {
-    background: url(../images/main-background.png) center no-repeat;
-    background-size: cover;
-    text-align: center;
-    font-family: 'Rubik Dirt', cursive;
-}
-
 /* Game area */
 #main-wrapper {
     height: fit-content;
@@ -74,6 +81,7 @@ body {
 
 div {
     height: 180px;
+    position: relative;
 }
 
 #bet-section {
@@ -154,6 +162,7 @@ h1 {
     transform: translate(-50%, -50%);
     color: #fff4ee;
     display: none;
+    z-index: 1;
 }
 
 input {
@@ -348,6 +357,7 @@ input {
     position: absolute;
     top: 40%;
     transform: translate(-90%, -50%);
+    z-index: 1;
 }
 
 #questions {

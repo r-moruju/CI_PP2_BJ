@@ -336,7 +336,8 @@ input {
 #quiz-main {
     height: fit-content;
     background-color: rgba(160, 155, 155, 0.3);
-    padding-top: 30px
+    padding-top: 30px;
+    position: relative;
 }
 
 #quiz-wrapper {
@@ -413,6 +414,7 @@ input {
 
 /* Media Query for small size screens */
 @media screen and (max-width: 500px) {
+    /* Home page */
     #welcome-message {
         width: 300px;
     }
@@ -464,6 +466,7 @@ input {
         width: 230px;
     }
 
+    /* Luck modal */
     #luck {
         width: 250px;
         height: fit-content;
@@ -480,5 +483,27 @@ input {
     #sign {
         height: 20px;
         font-size: 12px;
+    }
+    /* Quiz page */
+    #questions {
+        width: 90%;
+        top: 52%
+    }
+
+    .question-options li {
+        font-size: small;
+    }
+
+    .question-end-answer {
+        font-size: 14px;
+    }
+
+    .question-end ul li {
+        font-size: 12px;
+    }
+
+    #questions a {
+        font-size: 15px;
+        width: 38%;
     }
 }

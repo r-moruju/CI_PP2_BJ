@@ -210,3 +210,11 @@ function reactivateNext () {
     document.getElementById("next-question").addEventListener("click", nextQuestion);
     document.getElementById("next-question").classList.add("hover");
 }
+
+//Scroll to the top of the page
+//https://stackoverflow.com/questions/64596803/how-to-trigger-event-in-js-when-reaching-the-bottom-of-the-page-in-cases-where-t
+document.addEventListener('scroll', () => {
+    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+        window.scrollTo(0, 0);
+    }
+});

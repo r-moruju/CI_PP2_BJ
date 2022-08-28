@@ -20,12 +20,6 @@ html {
     background-size: cover;
   }
 
-footer {
-    position: sticky;
-    bottom: 0;
-}
-
-
 /* Header and navigation */
 #header {
     height: fit-content;
@@ -67,7 +61,7 @@ footer {
 
 /* Game area */
 #main-wrapper {
-    height: 1180px;
+    height: fit-content;
     background-color: rgba(160, 155, 155, 0.3);
     padding-top: 30px;
     position: relative;
@@ -152,7 +146,7 @@ h1 {
     padding: 30px;
     border-radius: 5px;
     position: absolute;
-    top: 23%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff4ee;
@@ -251,7 +245,7 @@ input {
 
 /* Feedback page */
 #contact {
-    height: 1180px;
+    height: 720px;
 }
 
 #contact p {
@@ -352,7 +346,7 @@ input {
 
 /* Quiz page */
 #quiz-main {
-    height: 1180px;
+    height: fit-content;
     background-color: rgba(160, 155, 155, 0.3);
     padding-top: 30px;
     position: relative;
@@ -364,7 +358,7 @@ input {
 
 #quiz-start {
     position: absolute;
-    top: 12%;
+    top: 25%;
     transform: translate(-80%, -50%);
     z-index: 1;
 }

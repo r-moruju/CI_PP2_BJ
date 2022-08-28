@@ -97,6 +97,18 @@ let questionOptions = document.getElementsByClassName("question-options")[0];
 let questionNumber = 0;
 let correctAnswers = 0;
 let allQuestionsAtTheEnd = "";
+let screenHeight = screen.height;
+
+adjustWrapperHeight();
+
+/**
+ * This function adjusts the height of the main page wrapper based on the screen size
+ */
+function adjustWrapperHeight() {
+    if(screenHeight > 700){
+        document.getElementById("quiz-main").style.height = `${screenHeight - 100}px`
+    }
+}
 
 // Add event listeners
 document.getElementById("next-question").addEventListener("click", nextQuestion);
@@ -210,11 +222,3 @@ function reactivateNext () {
     document.getElementById("next-question").addEventListener("click", nextQuestion);
     document.getElementById("next-question").classList.add("hover");
 }
-
-//Scroll to the top of the page
-//https://stackoverflow.com/questions/64596803/how-to-trigger-event-in-js-when-reaching-the-bottom-of-the-page-in-cases-where-t
-document.addEventListener('scroll', () => {
-    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-        window.scrollTo(0, 0);
-    }
-});

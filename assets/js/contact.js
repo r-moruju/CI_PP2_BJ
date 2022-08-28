@@ -1,6 +1,18 @@
 let response = document.getElementById("response");
 let responseMessage = document.getElementById("response-message");
 let close = document.getElementsByClassName("close")[0];
+let screenHeight = screen.height;
+
+adjustWrapperHeight();
+
+/**
+ * This function adjusts the height of the main page wrapper based on the screen size
+ */
+function adjustWrapperHeight() {
+    if(screenHeight > 820){
+        document.getElementById("contact").style.height = `${screenHeight - 100}px`
+    }
+}
 
 close.addEventListener("click", closeModal);
 
@@ -46,11 +58,3 @@ function closeModal() {
 function resetForm () {
     document.getElementById("contact-form").reset();
 }
-
-//Scroll to the top of the page
-https://stackoverflow.com/questions/64596803/how-to-trigger-event-in-js-when-reaching-the-bottom-of-the-page-in-cases-where-t
-document.addEventListener('scroll', () => {
-    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-        window.scrollTo(0, 0);
-    }
-});

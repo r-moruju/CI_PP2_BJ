@@ -8,6 +8,18 @@ let playerHand = document.getElementById("player-hand");
 let dealerValue = 0;
 let playerValue = 0;
 let screenSize = screen.width;
+let screenHeight = screen.height;
+
+adjustWrapperHeight();
+
+/**
+ * This function adjusts the height of the main page wrapper based on the screen size
+ */
+function adjustWrapperHeight() {
+    if(screenHeight > 700){
+        document.getElementById("main-wrapper").style.height = `${screenHeight - 100}px`
+    }
+}
 
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
@@ -361,11 +373,3 @@ function addResponsiveness(id) {
         }
     } 
 }
-
-//Scroll to the top of the page
-//https://stackoverflow.com/questions/64596803/how-to-trigger-event-in-js-when-reaching-the-bottom-of-the-page-in-cases-where-t
-document.addEventListener('scroll', () => {
-    if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-        window.scrollTo(0, 0);
-    }
-});

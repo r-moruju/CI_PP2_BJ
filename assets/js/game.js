@@ -341,8 +341,15 @@ function enableBet () {
  */
 function addResponsiveness(id) {
     let imgChildrens = document.getElementById(id).children;
-    let ofSetLeft = 10;
-    if (screenSize < 750 & imgChildrens.length > 3){
+    let ofSetLeft = 20;
+    if (screenSize < 400 & imgChildrens.length > 4){
+        ofSetLeft -= 10;
+        for( let img of imgChildrens){
+            img.style.position = "absolute"
+            img.style.left = `${ofSetLeft}%`
+            ofSetLeft += 10;
+        }
+    } else if (screenSize < 750 & imgChildrens.length > 3){
         for( let img of imgChildrens){
             img.style.position = "absolute"
             img.style.left = `${ofSetLeft}%`
@@ -354,5 +361,5 @@ function addResponsiveness(id) {
             img.style.left = `${ofSetLeft}%`
             ofSetLeft += 10;
         }
-    }
+    } 
 }

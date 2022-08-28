@@ -147,7 +147,7 @@ h1 {
 /* Game welcome message */
 #welcome-message {
     width: 400px;
-    height: 580px;
+    height: 490px;
     background-color: rgba(28, 25, 25, 0.9);
     padding: 30px;
     border-radius: 5px;
@@ -431,16 +431,57 @@ input {
     padding: 10px;
 }
 
+/* Media Query for medium size screens */
+@media screen and (max-width: 900px) {
+    p {
+        font-size: 18px;
+    }
+
+    #contact-form-wrapper form {
+        font-size: 100%;
+    }
+
+    #contact-form-wrapper{
+        width: 80%;
+        left: 10%;
+    }
+
+    #questions {
+        width: 80%;
+        top: 55%;
+    }
+
+    #credit-display p {
+        font-size: 12px;
+        line-height: 1px;
+    }
+
+    #credit-display {
+        width: fit-content;
+        height: 23px;
+    }
+
+    #navigation ul li {
+        margin: 5px;
+    }
+}
+
 /* Media Query for small size screens */
 @media screen and (max-width: 500px) {
 
     /* Home page */
     #welcome-message {
-        width: 300px;
+        width: 80%;
+        height: fit-content;
     }
 
     #welcome-message p {
         padding-bottom: 20px;
+        font-size: 16px;
+    }
+
+    #welcome-message label {
+        font-size: 15px;
     }
 
     p {
@@ -459,6 +500,7 @@ input {
 
     #credit-display p {
         font-size: 10px;
+        line-height: 8px;
     }
 
     #credit-display {
@@ -507,7 +549,11 @@ input {
     /* Quiz page */
     #questions {
         width: 90%;
-        top: 52%
+        top: 48%
+    }
+
+    #progres p {
+        padding-top: 11px;
     }
 
     .question-options li {
@@ -530,10 +576,14 @@ input {
     /* Feedbak page */
     #contact-form-wrapper form {
         font-size: 80%;
+        width: 80%;
+        left: 10%;
     }
 
     #contact-form-wrapper {
         width: 90%;
         left: 5%;
+        height: 490px;
+        margin-top: 20px;
     }
 }

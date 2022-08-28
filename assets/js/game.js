@@ -9,8 +9,6 @@ let dealerValue = 0;
 let playerValue = 0;
 let screenSize = screen.width;
 
-console.log(screenSize);
-
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("run-game").addEventListener("click", runGame);

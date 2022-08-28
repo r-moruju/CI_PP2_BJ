@@ -506,7 +506,7 @@ input {
     #credit-display {
         width: fit-content;
         height: 16px;
-        top: 1.5%;
+        top: 15px;
         right: 50%;
         transform: translate(50%, -50%);
     }

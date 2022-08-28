@@ -425,6 +425,12 @@ input {
     padding: 10px;
 }
 
+/* 404 page */
+#wrapper-404 h2, #wrapper-404 p {
+    color: #fa0000;
+    margin-top: 10%;
+}
+
 /* Media Query for medium size screens */
 @media screen and (max-width: 900px) {
     p {

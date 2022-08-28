@@ -97,6 +97,10 @@ function deal() {
     checkForCredit();
     dealCardsFromDeck();
     showHandValue();
+    // Check if player got 21 and force to stand
+    if (playerValue === 21){
+        stand();
+    }
 }
 
 /**
@@ -133,14 +137,22 @@ function showHandValue (){
         dealerValue += card.value;
     }
     dealerValue = checkForAce(dealerCards, dealerValue);
-     dealerHandValue.innerText = dealerValue;
+    if(dealerValue === 21){
+        dealerHandValue.innerText = "Blackjack";
+    } else {
+        dealerHandValue.innerText = dealerValue;
+    }
 
     playerValue = 0;
     for (let card of playerCards){
         playerValue += card.value;
     }
     playerValue = checkForAce(playerCards, playerValue);
-    playerHandValue.innerText = playerValue;
+    if(playerValue === 21){
+        playerHandValue.innerText = "Blackjack";
+    } else {
+        playerHandValue.innerText = playerValue;
+    }
 }
 
 /**
@@ -154,6 +166,10 @@ function hit() {
     `;
     showHandValue();
     checkForBust();
+    // Check if player got 21 and force to stand
+    if (playerValue === 21){
+        stand();
+    }
 }
 
 /**

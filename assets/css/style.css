@@ -580,4 +580,9 @@ input {
         height: 490px;
         margin-top: 20px;
     }
+
+    #response {
+        width: 80%;
+        padding: 5px;
+    }
 }

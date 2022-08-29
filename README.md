@@ -83,17 +83,18 @@ The goal of this project was to create a light version of a well-known casino ca
 5. I want to test my blackjack skills in a quiz
 6. I want to see what astrology says about my luck if I'm a superstitious player
 7. I want to see results after a game round
-8. I want to be able to play the game on desktop, tablet and mobile devices
-9. I want to be able to get in touch with the developer
-10. I want to be sure that my message has been sent
+8. I want to be able to see the credit left and total winnings
+9. I want to be able to play the game on desktop, tablet and mobile devices
+10. I want to be able to get in touch with the developer
+11. I want to be sure that my message has been sent
 
 ### Site Owner
 
-11. I want user to easily understand the game
-12. I want the user to be able to challenge their skills
-13. I want my game to be fully responsive
-14. I want the user to come to a 404 error page instead of having to use the browser back button if they enter a url that does not exist
-15. I want user to be able to contact me and provide their feedback
+12. I want user to easily understand the game
+13. I want the user to be able to challenge their skills
+14. I want my game to be fully responsive
+15. I want the user to come to a 404 error page instead of having to use the browser back button if they enter a url that does not exist
+16. I want user to be able to contact me and provide their feedback
 
 ## Design
 
@@ -158,3 +159,101 @@ The structure of the website was designed to be easy to learn and navigate. Each
 - [Google Fonts](https://fonts.google.com/)
 - [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools) were used for debugging of the code and check site for responsiveness
 - [WC3 Validator](https://validator.w3.org/), [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/), [JShint](https://jshint.com/), [Lighthouse](https://developers.google.com/web/tools/lighthouse/) were all used to validate the website
+
+## Features
+
+The website has 3 webpages consisting of 11 distinct features described below.
+
+### Home screen
+
+#### Welcome Modal
+- Where game instructions are covered, and the user can input his name and credit. If user choose not to input anything, a standard name and credit is given automatically
+- Username and credit get displayed on game screen
+- User stories covered: 1, 2, 4, 12
+
+<details><summary>See feature</summary>
+<img src="docs/features/welcome-modal.png">
+</details>
+
+#### Luck Modal
+- A modal with daily horoscope for superstitious players
+- available upon clicking the "Luck" link on navigation
+- User stories covered: 6
+
+<details><summary>See feature</summary>
+<img src="docs/features/luck-modal.png">
+</details>
+
+#### Round-end Modal
+- Appearing at the end of a round
+- Gives information about the round result
+- User stories covered: 7
+
+<details><summary>See feature</summary>
+<img src="docs/features/round-end-modal.png">
+</details>
+
+#### Bet
+- User can choose the bet amount betwin 20, 50 and 100
+- User stories covered: 3
+
+<details><summary>See feature</summary>
+<img src="docs/features/bet.png">
+</details>
+
+#### Credit and winnings
+- displayed on the main page shows available credit and winnings
+- User stories covered: 8
+
+<details><summary>See feature</summary>
+<img src="docs/features/credit.png">
+</details>
+
+#### Game area
+- The below elements are displayed on the screen:
+  - Dealer cards
+  - Dealer hand value
+  - Bet amount
+  - Player name
+  - Player hand value
+  - Player cards
+  - Play buttons
+- User stories covered: 2
+
+<details><summary>See feature</summary>
+<img src="docs/features/game-area.png">
+</details>
+
+### Quiz Page
+- A quiz where the user can test their blackjack skills
+- User stories covered: 5, 13
+
+<details><summary>See feature</summary>
+<img src="docs/features/quiz.png">
+</details>
+
+### Feedback Page
+- User is able to provide feedback about the game
+- EmailJS has been used to send an email to developer with user's data and message
+- User stories covered: 10, 16
+
+<details><summary>See feature</summary>
+<img src="docs/features/feedback.png">
+</details>
+
+### Contact Form confirmation modal
+- Thank you message is displayed
+- User stories covered: 11
+
+<details><summary>See feature</summary>
+<img src="docs/features/confirmation.png">
+</details>
+
+### 404 error page
+- The site has been given a 404 error page which is displayed if the user enters a url that does not exist.
+- Contains return to the main screen button
+- User stories covered: 15
+
+<details><summary>See feature</summary>
+<img src="docs/features/404-page.png">
+</details>

@@ -95,9 +95,14 @@ div {
     display: inline;
 }
 
+#dealer-score, #player-score, #bet {
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
 #bet {
     background-color: inherit;
-    font-family: 'Rubik Dirt', sans-serif;
+    font-family: sans-serif;
     font-size: 20px;
     border: none;
 }

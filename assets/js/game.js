@@ -196,7 +196,7 @@ function stand() {
             let bet = document.getElementById("bet").value;
             let wins = parseInt(document.getElementById("wins").innerText);
             
-            alert.innerText = `Dealer won! You lost ${bet}.`;
+            alert.innerText = `Dealer won! You lost ${bet} credits.`;
             // Adjust credit
             let credit = parseInt(document.getElementById("credit-left").innerText);
             credit -= bet;
@@ -216,7 +216,7 @@ function stand() {
         let alert = document.getElementById("alert");
         let bet = parseInt(document.getElementById("bet").value);
         let wins = parseInt(document.getElementById("wins").innerText);
-        alert.innerText = `You won ${bet}!`;
+        alert.innerHTML = `Dealer stand on ${dealerValue}<br>You won ${bet} credits!`;
         // Adjust credit
         let credit = parseInt(document.getElementById("credit-left").innerText);
         credit += bet;
@@ -242,7 +242,7 @@ function checkForBust() {
     let wins = parseInt(document.getElementById("wins").innerText);
     // Check if player got bust
     if (playerValue > 21) {
-        alert.innerText = `Bust! You lost ${bet}.`;
+        alert.innerText = `Bust! You lost ${bet} credits.`;
         // Silence listeners
         disableListener("stand", stand);
         disableListener("hit", hit)
@@ -258,7 +258,7 @@ function checkForBust() {
         enableListener("deal", deal);
     // Check if the dealer got bust
     } else if (dealerValue > 21) {
-        alert.innerText = `Dealer Bust! You won ${bet}!`;
+        alert.innerText = `Dealer Bust! You won ${bet} credits!`;
         // Adjust credit
         let credit = parseInt(document.getElementById("credit-left").innerText);
         credit += bet;

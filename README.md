@@ -134,3 +134,27 @@ The structure of the website was designed to be easy to learn and navigate. Each
 <details><summary>Home round result</summary>
 <img src="docs/wireframes/main-hand-end.png">
 </details>
+
+## Technologies Used
+
+### Languages
+
+- HTML
+- CSS
+- JavaScript
+
+### Tools
+
+- [Am I Responsive](http://ami.responsivedesign.is/) was used to create the multi-device mock-up you can see at the start of this README.md file.
+- [Balsamiq](https://balsamiq.com/) to create the wireframes for the project
+- [EmailJS](https://www.emailjs.com) used to send email from the contact form
+- [Favicon.io](https://favicon.io) for making the site favicon
+- [Font Awesome](https://fontawesome.com/) - Icons from Font Awesome were used throughout the site
+- [Astro API](https://rapidapi.com/sameer.kumar/api/aztro/) To fetch the daily horoscope
+- [Google Code Archive](https://code.google.com/archive/p/vector-playing-cards/downloads) to download the cards images
+- Microsoft Paint were used to create game pictures and resize background image
+- [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
+- [GitHub](https://github.com/) was used as a remote repository to store project code
+- [Google Fonts](https://fonts.google.com/)
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools) were used for debugging of the code and check site for responsiveness
+- [WC3 Validator](https://validator.w3.org/), [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/), [JShint](https://jshint.com/), [Lighthouse](https://developers.google.com/web/tools/lighthouse/) were all used to validate the website

@@ -112,12 +112,25 @@ Google Fonts were implemented on the website. Rubik Dirt was used across all scr
 
 The structure of the website was designed to be easy to learn and navigate. Each page of the website have the same background image that returns a casino atmosphere to the user
 
-- The game consist of the following screens:
-  - A home page / with a welcome modal window when the user arrives that provides instructions about the game and allows the user to enter their name and credit amount
+#### The website consist of the following pages:
+- A home page that contain:  
+  - Welcome modal window when the user arrives that provides instructions about the game and allows the user to enter their name and credit amount
   - Main game screen - where the players cards are displayed, together with the action buttons and hands values
   - Screen with a modal window that appear after a game round has finished, displaying the results of the round
   - Screen with a modal window that appear when the player does not have enough credits to play the hand
-- A modal with daily horoscope that appear when the user click the "Luck" link on the navigation
+  - A modal with daily horoscope that appear when the user click the "Luck" link on the navigation
 - A page with a quiz where the user can test their blackjack skills
 - The contact page with contact form which allows users to send an email to the developer and provide their feedback
 - A separate 404 error page
+
+### Wireframes
+
+<details><summary>Home welcome modal</summary>
+<img src="docs/wireframes/home-wellcome.png">
+</details>
+<details><summary>Home game screen</summary>
+<img src="docs/wireframes/home-main.png">
+</details>
+<details><summary>Home round result</summary>
+<img src="docs/wireframes/main-hand-end.png">
+</details>

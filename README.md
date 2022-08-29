@@ -103,3 +103,21 @@ The colour scheme across the screens was kept simple and consistent and was insp
 
 The pallet used was found on [ColorSpace](https://mycolor.space/?hex=%23FF0000&sub=1)
 <img src="docs/color-pallette.png">
+
+### Fonts
+
+Google Fonts were implemented on the website. Rubik Dirt was used across all screens as I found it to brings a old western aspect specific to casino games.
+
+### Structure
+
+The structure of the website was designed to be easy to learn and navigate. Each page of the website have the same background image that returns a casino atmosphere to the user
+
+- The game consist of the following screens:
+  - A home page / with a welcome modal window when the user arrives that provides instructions about the game and allows the user to enter their name and credit amount
+  - Main game screen - where the players cards are displayed, together with the action buttons and hands values
+  - Screen with a modal window that appear after a game round has finished, displaying the results of the round
+  - Screen with a modal window that appear when the player does not have enough credits to play the hand
+- A modal with daily horoscope that appear when the user click the "Luck" link on the navigation
+- A page with a quiz where the user can test their blackjack skills
+- The contact page with contact form which allows users to send an email to the developer and provide their feedback
+- A separate 404 error page

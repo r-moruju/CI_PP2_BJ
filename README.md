@@ -1,108 +1,105 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Blackjack Card Game (light version)
 
-Welcome R Moruju,
+**Developer: Razvan Moruju**
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Live website](https://r-moruju.github.io/CI_PP2_BJ/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Mockup image](docs/am-i-responsive.png)
 
-## Gitpod Reminders
+## Table of Content
+  - [Project Goals](#project-goals)
+    - [User Goals](#user-goals)
+    - [Site Owner Goals](#site-owner-goals)
+  - [User Experience](#user-experience)
+    - [Target Audience](#target-audience)
+    - [User Requirements and Expectations](#user-requirements-and-expectations)
+  - [User Stories](#user-stories)
+    - [Site User](#site-user)
+    - [Site Owner](#site-owner)
+  - [Design](#design)
+    - [Colour Scheme](#colour-scheme)
+    - [Fonts](#fonts)
+    - [Structure](#structure)
+    - [Wireframes](#wireframes)
+  - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks, Libraries & Tools](#frameworks-libraries--tools)
+  - [Features](#features)
+  - [Validation](#validation)
+    - [HTML Validation](#html-validation)
+    - [CSS Validation](#css-validation)
+    - [JavaScript Validation](#javascript-validation)
+    - [Accessibility](#accessibility)
+    - [Performance](#performance)
+  - [Testing](#testing)
+    - [Performing tests on various devices](#performing-tests-on-various-devices)
+    - [Browser compatibility](#browser-compatibility)
+    - [Testing user stories](#testing-user-stories)
+  - [Bugs](#bugs)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+  ## Project Goals
 
-`python3 -m http.server`
+The goal of this project was to create a light version of a well-known casino card game, Blackjack.
 
-A blue button should appear to click: _Make Public_,
+### User Goals
 
-Another blue button should appear to click: _Open Browser_.
+- Play a game with simple rules that is fun and engaging
+- To practice their Blackjack skills
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Site Owner Goals
 
-A blue button should appear to click: _Make Public_,
+- Create a game which is entertaining and engaging
+- Create a simple navigation around website
+- Provide a fully responsive and accessible website
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Target Audience
 
-To log into the Heroku toolbelt CLI:
+- The game can be played by anyone who likes Blackjack card game
+- Anyone who wants to test their Blackjack skills
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### User Requirements and Expectations
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- Easy to understand game rules
+- Simple navigation
+- Simple presentation of content on the page that makes logical sense
+- A responsive wesite that allows the user to play the game on any devise
+- Links and functions that work as expected
+- An easy way to contact the developer and leave feedback
+- Accessibility
 
-------
+## User Stories
 
-## Release History
+### Site User
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+1. I want to easily understand the rules of the game
+2. I want to enter my name and have it visible on screen while the game is played
+3. I want to be able to change the bet amount
+4. I want to be able to choose the amount of credit to be deposited
+5. I want to test my blackjack skills in a quiz
+6. I want to see what astrology says about my luck if I'm a superstitious player
+7. I want to see results after a game round
+8. I want to be able to play the game on desktop, tablet and mobile devices
+9. I want to be able to get in touch with the developer
+10. I want to be sure that my message has been sent
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Site Owner
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+11. I want user to easily understand the game
+12. I want the user to be able to challenge their skills
+13. I want my game to be fully responsive
+14. I want the user to come to a 404 error page instead of having to use the browser back button if they enter a url that does not exist
+15. I want user to be able to contact me and provide their feedback
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Design
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Colour Scheme
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The colour scheme across the screens was kept simple and consistent and was inspired by the red color, which is often used on casino card games.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+The pallet used was found on [ColorSpace](https://mycolor.space/?hex=%23FF0000&sub=1)
+<img src="docs/color-pallette.png">

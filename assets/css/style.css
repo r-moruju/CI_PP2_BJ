@@ -13,10 +13,8 @@ body {
 }
 
 html {
-    background: url(../images/main-background.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-color: crimson;
+    background: url(../images/main-background.png) no-repeat center center fixed;
     background-size: cover;
   }
 
@@ -73,7 +71,7 @@ html {
     position: absolute;
     top: 0%;
     right: 0%;
-    background-color: brown;
+    background-color: darkgray;
     border-radius: 4px;
     line-height: 8px;
 }

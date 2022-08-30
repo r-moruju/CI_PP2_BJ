@@ -326,3 +326,22 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 </details>
 <details><summary>Feedback page</summary><img src="docs/validation/validate-performance-feedback.png">
 </details>
+
+## Testing
+
+### Performing tests on various devices
+
+The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
+
+The website was tested on the following devices:
+- Lenovo ideapad 5
+- Samsung Galaxy Tab 8 Ultra
+- Xiaomi redmi note 11 pro
+- Iphone 12
+
+### Browser compatibility
+
+- Testing has been carried out on the following browsers:
+  - Googe Chrome
+  - Firefox
+  - Microsoft Edge

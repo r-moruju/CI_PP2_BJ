@@ -258,6 +258,8 @@ The website has 3 webpages consisting of 10 distinct features described below.
 <img src="docs/features/404-page.png">
 </details>
 
+## Validation
+
 ### HTML Validation
 
 The W3C Markup Validation Service was used to validate the HTML of the website. All pages pass with no errors.
@@ -275,4 +277,13 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 
 <details><summary>404 error page</summary>
 <img src="docs/validation/validate-html-404.png">
+</details>
+
+### CSS Validation
+
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
+It goes without errors.
+
+<details><summary>CSS Validation</summary>
+<img src="docs/validation/validation-css.png">
 </details>

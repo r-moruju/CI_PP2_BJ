@@ -284,6 +284,23 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
 It goes without errors.
 
-<details><summary>CSS Validation</summary>
+<details><summary>style.css</summary>
 <img src="docs/validation/validation-css.png">
+</details>
+
+### JavaScript Validation
+
+JSHint JS Validation Service was used to validate the Javascript files. No significant issues were found.
+
+<details><summary>game.js</summary>
+<img src="docs/validation/validate-js-game.png">
+</details>
+<details><summary>quiz.js</summary>
+<img src="docs/validation/validate-js-quiz.png">
+</details>
+<details><summary>contact.js</summary>
+<img src="docs/validation/validate-js-contact.png">
+</details>
+<details><summary>luck.js</summary>
+<img src="docs/validation/validate-js-luck.png">
 </details>

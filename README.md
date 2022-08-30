@@ -162,7 +162,7 @@ The structure of the website was designed to be easy to learn and navigate. Each
 
 ## Features
 
-The website has 3 webpages consisting of 11 distinct features described below.
+The website has 3 webpages consisting of 10 distinct features described below.
 
 ### Home screen
 
@@ -256,4 +256,23 @@ The website has 3 webpages consisting of 11 distinct features described below.
 
 <details><summary>See feature</summary>
 <img src="docs/features/404-page.png">
+</details>
+
+### HTML Validation
+
+The W3C Markup Validation Service was used to validate the HTML of the website. All pages pass with no errors.
+<details><summary>Home</summary>
+<img src="docs/validation/validate-html-home.png">
+</details>
+
+<details><summary>Quiz page</summary>
+<img src="docs/validation/validate-html-quiz.png">
+</details>
+
+<details><summary>Feedback page</summary>
+<img src="docs/validation/validate-html-feedback.png">
+</details>
+
+<details><summary>404 error page</summary>
+<img src="docs/validation/validate-html-404.png">
 </details>

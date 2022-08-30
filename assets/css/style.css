@@ -13,7 +13,6 @@ body {
 }
 
 html {
-    background-color: crimson;
     background: url(../images/main-background.png) no-repeat center center fixed;
     background-size: cover;
   }
@@ -252,7 +251,7 @@ input {
 }
 
 #contact p {
-    color: #fff4ee;
+    color: #fa0000;
     padding-top: 50px;
 }
 

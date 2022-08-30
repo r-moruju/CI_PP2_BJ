@@ -10,7 +10,7 @@ adjustWrapperHeight();
  */
 function adjustWrapperHeight() {
     if(screenHeight > 820){
-        document.getElementById("contact").style.height = `${screenHeight - 100}px`
+        document.getElementById("contact").style.height = `${screenHeight - 100}px`;
     }
 }
 
@@ -43,7 +43,7 @@ window.onload = function() {
                 responseMessage.innerText = "Message sent fail";
             });
     });
-}
+};
 
 /**
  * Close Modal window

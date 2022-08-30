@@ -89,14 +89,13 @@ let questions = [
         ],
         answer: "False"
     }
-]
+];
 
 // Declare global variables
 let questionText = document.getElementsByClassName("question-text")[0];
 let questionOptions = document.getElementsByClassName("question-options")[0];
 let questionNumber = 0;
 let correctAnswers = 0;
-let allQuestionsAtTheEnd = "";
 let screenHeight = screen.height;
 
 adjustWrapperHeight();
@@ -106,7 +105,7 @@ adjustWrapperHeight();
  */
 function adjustWrapperHeight() {
     if(screenHeight > 700){
-        document.getElementById("quiz-main").style.height = `${screenHeight - 100}px`
+        document.getElementById("quiz-main").style.height = `${screenHeight - 100}px`;
     }
 }
 
@@ -198,7 +197,7 @@ function seeResults () {
         for( let choice of item.choices){
             questionChoices += `
                 <li>${choice}</li>
-            `
+            `;
         }
         document.getElementById("questions").innerHTML += `
             <div class="question-end">
@@ -206,7 +205,7 @@ function seeResults () {
                 <ul>${questionChoices}</ul>
                 <p class="question-end-answer">Correct answer is <strong>${item.answer}</strong></p>
             </div>
-        `
+        `;
     }
     // Add links at the end of questions list
     document.getElementById("questions").innerHTML += `<a href="index.html">Return Home</a>`;

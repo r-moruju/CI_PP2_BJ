@@ -17,7 +17,7 @@ adjustWrapperHeight();
  */
 function adjustWrapperHeight() {
     if(screenHeight > 700){
-        document.getElementById("main-wrapper").style.height = `${screenHeight - 100}px`
+        document.getElementById("main-wrapper").style.height = `${screenHeight - 100}px`;
     }
 }
 
@@ -58,7 +58,7 @@ function runGame() {
  * Deal cards
  */
 function deal() {
-    checkForCredit()
+    checkForCredit();
     disableBet();
     enableListener("hit", hit);
     enableListener("stand", stand);
@@ -245,7 +245,7 @@ function checkForBust() {
         alert.innerText = `Bust! You lost ${bet} credits.`;
         // Silence listeners
         disableListener("stand", stand);
-        disableListener("hit", hit)
+        disableListener("hit", hit);
         // Adjust credit
         let credit = parseInt(document.getElementById("credit-left").innerText);
         credit -= bet;
@@ -386,20 +386,20 @@ function addResponsiveness(id) {
     if (screenSize < 400 & imgChildrens.length > 4){
         ofSetLeft -= 10;
         for( let img of imgChildrens){
-            img.style.position = "absolute"
-            img.style.left = `${ofSetLeft}%`
+            img.style.position = "absolute";
+            img.style.left = `${ofSetLeft}%`;
             ofSetLeft += 10;
         }
     } else if (screenSize < 750 & imgChildrens.length > 3){
         for( let img of imgChildrens){
-            img.style.position = "absolute"
-            img.style.left = `${ofSetLeft}%`
+            img.style.position = "absolute";
+            img.style.left = `${ofSetLeft}%`;
             ofSetLeft += 10;
         }
     } else if (screenSize < 400 & imgChildrens.length > 2){
         for( let img of imgChildrens){
-            img.style.position = "absolute"
-            img.style.left = `${ofSetLeft}%`
+            img.style.position = "absolute";
+            img.style.left = `${ofSetLeft}%`;
             ofSetLeft += 10;
         }
     } 

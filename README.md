@@ -316,3 +316,13 @@ All site pass with 0 errors.
 </details>
 <details><summary>Feedback page</summary><img src="docs/validation/validate-accessibility-feedback.png">
 </details>
+
+### Performance
+
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website.
+<details><summary>Home page</summary><img src="docs/validation/validate-performance-home.png">
+</details>
+<details><summary>Quiz page</summary><img src="docs/validation/validate-performance-quiz.png">
+</details>
+<details><summary>Feedback page</summary><img src="docs/validation/validate-performance-feedback.png">
+</details>

@@ -304,3 +304,15 @@ JSHint JS Validation Service was used to validate the Javascript files. No signi
 <details><summary>luck.js</summary>
 <img src="docs/validation/validate-js-luck.png">
 </details>
+
+### Accessibility
+
+The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards.
+All site pass with 0 errors.
+
+<details><summary>Home page</summary><img src="docs/validation/validate-accessibility-home.png">
+</details>
+<details><summary>Quiz page</summary><img src="docs/validation/validate-accessibility-quiz.png">
+</details>
+<details><summary>Feedback page</summary><img src="docs/validation/validate-accessibility-feedback.png">
+</details>

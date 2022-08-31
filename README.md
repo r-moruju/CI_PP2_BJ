@@ -151,7 +151,7 @@ The structure of the website was designed to be easy to learn and navigate. Each
 - [EmailJS](https://www.emailjs.com) used to send email from the contact form
 - [Favicon.io](https://favicon.io) for making the site favicon
 - [Font Awesome](https://fontawesome.com/) - Icons from Font Awesome were used throughout the site
-- [Astro API](https://rapidapi.com/sameer.kumar/api/aztro/) To fetch the daily horoscope
+- [Aztro API](https://rapidapi.com/sameer.kumar/api/aztro/) To fetch the daily horoscope
 - [Google Code Archive](https://code.google.com/archive/p/vector-playing-cards/downloads) to download the cards images
 - Microsoft Paint were used to create game pictures and resize background image
 - [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
@@ -544,3 +544,14 @@ The website was deployed using GitHub Pages by following these steps:
 5. Change the current working directory to the one where you want the cloned directory
 6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
 7. Press Enter to create your local clone
+
+## Credits
+
+### Images
+
+- Background image: photo found on [pexels.com](https://www.pexels.com/ro-ro/fotografie/casino-cazinou-joc-meci-6664128/)
+- Card deck images from [google code archive](https://code.google.com/archive/p/vector-playing-cards/downloads)
+
+### Code
+- [EmailJS](https://www.emailjs.com/docs/tutorial/creating-contact-form) official tutorial & playground environment within EmailJS Email Templates were used to create a contact form with email being sent to desired address
+-  [Rapid API](https://rapidapi.com/sameer.kumar/api/aztro/) code snipped used to fech Aztro API

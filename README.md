@@ -345,3 +345,172 @@ The website was tested on the following devices:
   - Googe Chrome
   - Firefox
   - Microsoft Edge
+
+### Testing user stories
+
+1. I want to easily understand the rules of the game
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| Welcome Modal     | Every time the home page is refreshed | Modal with game instructions pops up | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/welcome-modal.png">
+</details>
+
+2. I want to enter my name and have it visible on screen while the game is played
+
+| **Feature**    | **Action**                                | **Expected Result**                               | **Actual Result** |
+| -------------- | ----------------------------------------- | ------------------------------------------------- | ----------------- |
+| Welcome modal  | On welcome modal input your name          | Your name gets displayed on game area             | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/welcome-modal.png">
+<img src="docs/testing-user-story/user-story-2.png">
+</details>
+
+3. I want to be able to change the bet amount
+
+| **Feature**       | **Action**             | **Expected Result**                  | **Actual Result** |
+| ----------------- | ---------------------- | ------------------------------------ | ----------------- |
+| Bet               | Click on the bet value | The bet changes after the selection  | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/bet.png">
+</details>
+
+4. I want to be able to choose the amount of credit to be deposited
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| welcome modal     |Enter the amount of credit to be deposited | The credit gets displayed on the screen during the game| Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/welcome-modal.png">
+<img src="docs/testing-user-story/credit.png">
+</details>
+
+5. I want to test my blackjack skills in a quiz
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| Quiz              | Navigate to quiz page | The user can take a test related to blackjack | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/user-story-5.png">
+<img src="docs/testing-user-story/quiz.png">
+</details>
+
+6. I want to see what astrology says about my luck if I'm a superstitious player
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| Luck modal        | Use navigation to pop up luck modal | The user can use the luck modal to see the daily horoscope | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/user-story-6.png">
+<img src="docs/testing-user-story/luck-modal.png">
+</details>
+
+7. I want to see results after a game round
+
+| **Feature**       | **Action**             | **Expected Result**                  | **Actual Result** |
+| ----------------- | ---------------------- | ------------------------------------ | ----------------- |
+| Round-end Modal   | Play a game round      | Round-end modal gets displayed       | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/round-end-modal.png">
+</details>
+
+8. I want to be able to see the credit left and total winnings
+
+| **Feature**       | **Action**             | **Expected Result**                  | **Actual Result** |
+| ----------------- | ---------------------- | ------------------------------------ | ----------------- |
+| Credit and winnings   | Look at the top left corner     | See credit and winnings      | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/credit.png">
+</details>
+
+9. I want to be able to play the game on desktop, tablet and mobile devices
+
+| **Feature**                                   | **Action**                | **Expected Result**                      | **Actual Result** |
+| --------------------------------------------- | ------------------------- | ---------------------------------------- | ----------------- |
+| Every page has been designed to be responsive | Change device screen size | The site works on different screen sizes | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/am-i-responsive.png">
+</details>
+
+10. I want to be able to get in touch with the developer
+
+| **Feature**  | **Action**                               | **Expected Result**       | **Actual Result** |
+| ------------ | ---------------------------------------- | ------------------------- | ----------------- |
+| Feedback Page | Navigate to the feedback page and fill out the form | The developer receives your feedback | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/user-story-10.png">
+<img src="docs/testing-user-story/feedback.png">
+</details>
+
+11. I want to be sure that my message has been sent
+
+| **Feature**  | **Action**                               | **Expected Result**       | **Actual Result** |
+| ------------ | ---------------------------------------- | ------------------------- | ----------------- |
+| Contact Form confirmation modal| click send on contact page | A confirmation message is displayed | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/confirmation.png">
+</details>
+
+12. I want user to easily understand the game
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| Welcome Modal     | Every time the home page is refreshed | Modal with game instructions pops up | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/welcome-modal.png">
+</details>
+
+13. I want the user to be able to challenge their skills
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| Quiz              | Navigate to quiz page | The user can take a test related to blackjack | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/user-story-5.png">
+<img src="docs/testing-user-story/quiz.png">
+</details>
+
+14. I want to be able to play the game on desktop, tablet and mobile devices
+
+| **Feature**                                   | **Action**                | **Expected Result**                      | **Actual Result** |
+| --------------------------------------------- | ------------------------- | ---------------------------------------- | ----------------- |
+| Every page has been designed to be responsive | Change device screen size | The site works on different screen sizes | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/am-i-responsive.png">
+</details>
+
+15. I want the user to come to a 404 error page instead of having to use the browser back button if they enter a url that does not exist
+
+| **Feature**       | **Action**        | **Expected Result**                  | **Actual Result** |
+| ----------------- | ----------------- | ------------------------------------ | ----------------- |
+| 404 error page    | Enter a url that does not exist| 404 page gets displayed | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/404-page.png">
+</details
+
+16. I want user to be able to contact me and provide their feedback
+
+| **Feature**  | **Action**                               | **Expected Result**       | **Actual Result** |
+| ------------ | ---------------------------------------- | ------------------------- | ----------------- |
+| Feedback Page | Navigate to the feedback page and fill out the form | The developer receives your feedback | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing-user-story/user-story-10.png">
+<img src="docs/testing-user-story/feedback.png">
+</details>

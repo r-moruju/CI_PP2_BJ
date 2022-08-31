@@ -555,3 +555,8 @@ The website was deployed using GitHub Pages by following these steps:
 ### Code
 - [EmailJS](https://www.emailjs.com/docs/tutorial/creating-contact-form) official tutorial & playground environment within EmailJS Email Templates were used to create a contact form with email being sent to desired address
 -  [Rapid API](https://rapidapi.com/sameer.kumar/api/aztro/) code snipped used to fech Aztro API
+
+## Acknowledgements
+Many thanks to everyone who supported me in the development of the website:
+- Most importantly, to my mentor Mo Shami for professional guidance 
+- Friends and family who played the game on their tablets and mobiles and provided feedback on responsiveness

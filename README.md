@@ -521,3 +521,26 @@ The website was tested on the following devices:
 | ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | The height of the page was not big enough to cover different screen size heights, and a white bar was appearing on the bottom | Setting the body and html to 100% height did not solve the bug. I use javascript to dynamically set the page height depending on the current screen height |
 | Adding responsiveness to game area was the biggest css challenge. As you play a game round, it might be possible that at some point, more then 4 card need to be displayed, for each player. Having them all squeezed on a small screen was challenging | I wrote a js function that, each time a new card is added to the player hand, loops through card list, set each card position to absolute and offset each card position by 10%
+
+## Deployment
+
+### GitHub Pages
+The website was deployed using GitHub Pages by following these steps:
+1. In the GitHub repository navigate to the Settings tab
+2. On the left hand menu select Pages
+3. For the source select Branch: main
+4. Once saved, GitHub will refresh and your website will be publishd from GitHub repository
+5. The link to your published website will appear: "Your site is live at https://r-moruju.github.io/CI_PP2_BJ/"
+
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button in top right corner
+
+### Making a Local Clone
+1. Go to the GitHub repository 
+2. Locate the Code button above the list of files and click it
+3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone

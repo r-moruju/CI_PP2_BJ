@@ -502,7 +502,7 @@ The website was tested on the following devices:
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing-user-story/404-page.png">
-</details
+</details>
 
 16. I want user to be able to contact me and provide their feedback
 
@@ -514,3 +514,10 @@ The website was tested on the following devices:
 <img src="docs/testing-user-story/user-story-10.png">
 <img src="docs/testing-user-story/feedback.png">
 </details>
+
+## Bugs
+
+| Bug                                                         | Fix                                                                                    |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| The height of the page was not big enough to cover different screen size heights, and a white bar was appearing on the bottom | Setting the body and html to 100% height did not solve the bug. I use javascript to dynamically set the page height depending on the current screen height |
+| Adding responsiveness to game area was the biggest css challenge. As you play a game round, it might be possible that at some point, more then 4 card need to be displayed, for each player. Having them all squeezed on a small screen was challenging | I wrote a js function that, each time a new card is added to the player hand, loops through card list, set each card position to absolute and offset each card position by 10%

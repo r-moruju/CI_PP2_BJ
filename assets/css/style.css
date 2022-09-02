@@ -135,6 +135,10 @@ h1 {
     border: none;
 }
 
+.gray-button {
+    background-color: gray;
+}
+
 .hover:hover,
 .hover:active {
     background-color: #fa0000;

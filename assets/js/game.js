@@ -317,6 +317,7 @@ function javascriptAbort() {
 function disableListener (id, func) {
     document.getElementById(id).removeEventListener("click", func);
     document.getElementById(id).classList.remove("hover");
+    document.getElementById(id).classList.add("gray-button");
 }
 
 /**
@@ -327,6 +328,7 @@ function disableListener (id, func) {
 function enableListener (id, func) {
     document.getElementById(id).addEventListener("click", func);
     document.getElementById(id).classList.add("hover");
+    document.getElementById(id).classList.remove("gray-button");
 }
 
 /**

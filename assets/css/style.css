@@ -143,7 +143,7 @@ h1 {
 /* Game welcome message */
 #welcome-message {
     width: 400px;
-    height: 490px;
+    height: fit-content;
     background-color: rgba(28, 25, 25, 0.9);
     padding: 30px;
     border-radius: 5px;
@@ -175,6 +175,7 @@ input {
 }
 
 #welcome-message p {
+    text-align: left;
     font-size: 18px;
     font-family: sans-serif;
     padding-bottom: 50px;

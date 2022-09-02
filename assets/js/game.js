@@ -39,7 +39,7 @@ function runGame() {
     let credit = document.getElementById("credit").value;
     let playerName = document.getElementById("player-name").value;
     document.getElementById("welcome-message").style.display = "none";
-    // Error handdle if user does not enter any detail
+    // Error handle if user does not enter any detail
     if (credit.length < 2) {
         document.getElementById("credit-left").innerText = "20";
     } else {
@@ -372,7 +372,9 @@ function addResponsiveness(id) {
         }
     } 
 }
-
+/**
+ * Adjust credit. Update credit on screen. Set the stage for a new round
+ */
 function increaseCredit() {
     let endGame = document.getElementById("end-game");
     let bet = parseInt(document.getElementById("bet").value);
@@ -390,6 +392,9 @@ function increaseCredit() {
     enableListener("deal", deal);
 }
 
+/**
+ * Adjust credit. Update credit on screen. Set the stage for a new round
+ */
 function decreaseCredit() {
     let endGame = document.getElementById("end-game");
     let bet = parseInt(document.getElementById("bet").value);

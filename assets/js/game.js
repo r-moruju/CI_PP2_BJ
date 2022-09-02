@@ -98,11 +98,11 @@ function deal() {
     checkForCredit();
     dealCardsFromDeck();
     showHandValue();
-    // Check if player got 21 and force to stand
+    // Check if player got 21 and activate blackjack
     if (playerValue === 21){
         disableListener("hit", hit);
         disableListener("stand" ,stand);
-        playerHandValue.innerText = "Blackjack";
+        playerHandValue.innerText = playerValue;
         let endGame = document.getElementById("end-game");
         let alert = document.getElementById("alert");
         let bet = parseInt(document.getElementById("bet").value);
@@ -189,6 +189,7 @@ function hit() {
 function stand() {
     disableListener ("stand", stand);
     disableListener ("hit", hit);
+    let bet = parseInt(document.getElementById("bet").value);
     while (dealerValue < playerValue && dealerValue < 17) {
         let newCard = deck.pop();
         dealerCards.push(newCard);
@@ -202,44 +203,17 @@ function stand() {
         checkForBust();
         // Check if dealer won by points value
         if (dealerValue > playerValue && dealerValue < 22) {
-            let endGame = document.getElementById("end-game");
             let alert = document.getElementById("alert");
-            let bet = document.getElementById("bet").value;
-            let wins = parseInt(document.getElementById("wins").innerText);
-            
             alert.innerText = `Dealer won! You lost ${bet} credits.`;
-            // Adjust credit
-            let credit = parseInt(document.getElementById("credit-left").innerText);
-            credit -= bet;
-            wins -= bet;
-            // update credit
-            document.getElementById("credit-left").innerText = credit;
-            document.getElementById("wins").innerText = wins;
-
-            endGame.style.display = "unset";
-            enableListener("deal", deal);
-            enableBet();
+            decreaseCredit();
         }
         displayWins();
     }
     // Check if player won by points value
     if (playerValue > dealerValue) {
-        let endGame = document.getElementById("end-game");
         let alert = document.getElementById("alert");
-        let bet = parseInt(document.getElementById("bet").value);
-        let wins = parseInt(document.getElementById("wins").innerText);
         alert.innerHTML = `Dealer stand on ${dealerValue}<br>You won ${bet} credits!`;
-        // Adjust credit
-        let credit = parseInt(document.getElementById("credit-left").innerText);
-        credit += bet;
-        wins += bet;
-        // update credit on screen
-        document.getElementById("credit-left").innerText = credit;
-        document.getElementById("wins").innerText = wins;
-
-        endGame.style.display = "unset";
-        enableBet();
-        enableListener("deal", deal);
+        increaseCredit();
     }
 }
 
@@ -249,41 +223,21 @@ function stand() {
 function checkForBust() {
     addResponsiveness("dealer-hand");
     addResponsiveness("player-hand");
-    let endGame = document.getElementById("end-game");
-    let alert = document.getElementById("alert");
     let bet = parseInt(document.getElementById("bet").value);
-    let wins = parseInt(document.getElementById("wins").innerText);
+    let alert = document.getElementById("alert");
+    let endGame = document.getElementById("end-game");
     // Check if player got bust
     if (playerValue > 21) {
         alert.innerText = `Bust! You lost ${bet} credits.`;
         // Silence listeners
         disableListener("stand", stand);
         disableListener("hit", hit);
-        // Adjust credit
-        let credit = parseInt(document.getElementById("credit-left").innerText);
-        credit -= bet;
-        wins -= bet;
-        // update credit on screen
-        document.getElementById("credit-left").innerText = credit;
-        document.getElementById("wins").innerText = wins;
-
-        endGame.style.display = "unset";
-        enableBet();
-        enableListener("deal", deal);
+        decreaseCredit();
     // Check if the dealer got bust
     } else if (dealerValue > 21) {
         alert.innerText = `Dealer Bust! You won ${bet} credits!`;
         // Adjust credit
-        let credit = parseInt(document.getElementById("credit-left").innerText);
-        credit += bet;
-        wins += bet;
-        // update credit on screen
-        document.getElementById("credit-left").innerText = credit;
-        document.getElementById("wins").innerText = wins;
-
-        endGame.style.display = "unset";
-        enableBet();
-        enableListener("deal", deal);
+        increaseCredit();
     // Check if draw
     } else if (playerValue === dealerValue) {
         alert.innerText = "It's a draw!";
@@ -335,7 +289,6 @@ function checkForCredit() {
 
     if (bet > credit) {
         document.getElementById("alert").innerHTML = `<p>You are out of credit</p><p>Back <a href="index.html">home</a></p><p>Or change bet</p>`;
-        //document.getElementById("end-game").style.height = "200px";
         document.getElementById("end-game").style.display = "unset";
         javascriptAbort();
     }
@@ -418,4 +371,38 @@ function addResponsiveness(id) {
             ofSetLeft += 10;
         }
     } 
+}
+
+function increaseCredit() {
+    let endGame = document.getElementById("end-game");
+    let bet = parseInt(document.getElementById("bet").value);
+    let wins = parseInt(document.getElementById("wins").innerText);
+    // Adjust credit
+    let credit = parseInt(document.getElementById("credit-left").innerText);
+    credit += bet;
+    wins += bet;
+    // update credit on screen
+    document.getElementById("credit-left").innerText = credit;
+    document.getElementById("wins").innerText = wins;
+
+    endGame.style.display = "unset";
+    enableBet();
+    enableListener("deal", deal);
+}
+
+function decreaseCredit() {
+    let endGame = document.getElementById("end-game");
+    let bet = parseInt(document.getElementById("bet").value);
+    let wins = parseInt(document.getElementById("wins").innerText);
+    // Adjust credit
+    let credit = parseInt(document.getElementById("credit-left").innerText);
+    credit -= bet;
+    wins -= bet;
+    // update credit on screen
+    document.getElementById("credit-left").innerText = credit;
+    document.getElementById("wins").innerText = wins;
+
+    endGame.style.display = "unset";
+    enableBet();
+    enableListener("deal", deal);
 }

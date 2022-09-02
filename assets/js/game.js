@@ -64,6 +64,7 @@ function deal() {
     enableListener("stand", stand);
     disableListener("deal", deal);
     document.getElementById("end-game").style.display = "none";
+    let playerHandValue = document.getElementById("player-score");
     let cardsSuits = ["clubs", "diamonds", "hearts", "spades"];
     let cardsValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "ace", "jack", "queen", "king"];
     // Reset deck
@@ -99,7 +100,25 @@ function deal() {
     showHandValue();
     // Check if player got 21 and force to stand
     if (playerValue === 21){
-        stand();
+        disableListener("hit", hit);
+        disableListener("stand" ,stand);
+        playerHandValue.innerText = "Blackjack";
+        let endGame = document.getElementById("end-game");
+        let alert = document.getElementById("alert");
+        let bet = parseInt(document.getElementById("bet").value);
+        let wins = parseInt(document.getElementById("wins").innerText);
+        alert.innerHTML = `Blackjack!! <br> You won 1.5x${bet}`;
+        // Adjust credit
+        let credit = parseInt(document.getElementById("credit-left").innerText);
+        credit += bet * 1.5;
+        wins += bet * 1.5;
+        // update credit
+        document.getElementById("credit-left").innerText = credit;
+        document.getElementById("wins").innerText = wins;
+
+        endGame.style.display = "unset";
+        enableBet();
+        enableListener("deal", deal);
     }
 }
 
@@ -137,22 +156,14 @@ function showHandValue (){
         dealerValue += card.value;
     }
     dealerValue = checkForAce(dealerCards, dealerValue);
-    if(dealerValue === 21){
-        dealerHandValue.innerText = "Blackjack";
-    } else {
-        dealerHandValue.innerText = dealerValue;
-    }
+    dealerHandValue.innerText = dealerValue;
 
     playerValue = 0;
     for (let card of playerCards){
         playerValue += card.value;
     }
     playerValue = checkForAce(playerCards, playerValue);
-    if(playerValue === 21){
-        playerHandValue.innerText = "Blackjack";
-    } else {
-        playerHandValue.innerText = playerValue;
-    }
+    playerHandValue.innerText = playerValue;
 }
 
 /**
@@ -181,7 +192,7 @@ function stand() {
     while (dealerValue < playerValue && dealerValue < 17) {
         let newCard = deck.pop();
         dealerCards.push(newCard);
-        dealerHand.innerHTML = "";
+        dealerHand.innerHTML = ""; // reset dealer hand
         for (let card of dealerCards) {
             dealerHand.innerHTML += `
                 <img src="assets/images/deck/${card.name}.png" alt="A game card"></img>
@@ -201,6 +212,7 @@ function stand() {
             let credit = parseInt(document.getElementById("credit-left").innerText);
             credit -= bet;
             wins -= bet;
+            // update credit
             document.getElementById("credit-left").innerText = credit;
             document.getElementById("wins").innerText = wins;
 
@@ -221,6 +233,7 @@ function stand() {
         let credit = parseInt(document.getElementById("credit-left").innerText);
         credit += bet;
         wins += bet;
+        // update credit on screen
         document.getElementById("credit-left").innerText = credit;
         document.getElementById("wins").innerText = wins;
 
@@ -250,6 +263,7 @@ function checkForBust() {
         let credit = parseInt(document.getElementById("credit-left").innerText);
         credit -= bet;
         wins -= bet;
+        // update credit on screen
         document.getElementById("credit-left").innerText = credit;
         document.getElementById("wins").innerText = wins;
 
@@ -263,6 +277,7 @@ function checkForBust() {
         let credit = parseInt(document.getElementById("credit-left").innerText);
         credit += bet;
         wins += bet;
+        // update credit on screen
         document.getElementById("credit-left").innerText = credit;
         document.getElementById("wins").innerText = wins;
 

@@ -24,6 +24,11 @@ function adjustWrapperHeight() {
 // Wait for page to load
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("run-game").addEventListener("click", runGame);
+    document.getElementById("credit").addEventListener("keypress", function(event) {
+        if(event.key === "Enter"){
+            runGame();
+        }
+    })
 });
 
 document.getElementsByClassName("close")[0].addEventListener("click", closeModal);

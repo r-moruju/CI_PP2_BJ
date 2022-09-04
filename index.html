@@ -52,7 +52,7 @@
             <input type="text" id="player-name"><br><br>
             <label for="credit">Your credit:</label>
             <input type="number" id="credit"><br>
-            <button type="submit" id="run-game" class="button hover">Ok</button>
+            <button aria-label="ok" type="submit" id="run-game" class="button hover">Ok</button>
         </div>
         <!--Hand end modal-->
         <div id="end-game">
@@ -78,11 +78,11 @@
                 <option value="pisces">Pisces</option>
             </select>
             <br>
-            <button id="luck-run" class="button hover">Run</button>
+            <button aria-label="run" id="luck-run" class="button hover">Run</button>
             <div id="astro-result">
                 <!-- The results from astro api will be rendered here -->
             </div>
-            <button id="close-luck" class="button hover">Close</button>
+            <button aria-label="close" id="close-luck" class="button hover">Close</button>
         </div>
         <div id="credit-display">
             <p>Credit: <span id="credit-left">0</span>   Winnings: <span id="wins">0</span></p>
@@ -106,9 +106,9 @@
             <img src="assets/images/deck/card_back.png" alt="A game card">
         </div>
         <div id="buttons">
-            <button class="button hover" id="deal">Deal</button>
-            <button class="button hover" id="hit">Hit</button>
-            <button class="button hover" id="stand">Stand</button>
+            <button aria-label="deal" class="button hover" id="deal">Deal</button>
+            <button aria-label="hit" class="button hover" id="hit">Hit</button>
+            <button aria-label="stand" class="button hover" id="stand">Stand</button>
         </div>
     </div>
     <footer>

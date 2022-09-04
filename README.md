@@ -140,9 +140,12 @@ The structure of the website was designed to be easy to learn and navigate. Each
 
 ### Languages
 
-- HTML
-- CSS
-- JavaScript
+- HTML (https://en.wikipedia.org/wiki/HTML)
+    - The project uses html to build the relevant pages
+- CSS (https://en.wikipedia.org/wiki/CSS)
+    - The project uses CSS to style the relevant pages
+- Javascript (https://www.javascript.com/)
+    - Javascript was used for all scripting on the site
 
 ### Tools
 
@@ -291,6 +294,7 @@ It goes without errors.
 ### JavaScript Validation
 
 JSHint JS Validation Service was used to validate the Javascript files. No significant issues were found.
+I need to mention that contact.js return a undefined variable. That variable is defined on "email.min.js" file witch is called from the script tag on the "contact.html" head. <details><summary>email.min.js</summary><img src="docs/validation/undefine-emailjs.png"></details>
 
 <details><summary>game.js</summary>
 <img src="docs/validation/validate-js-game.png">
@@ -545,6 +549,22 @@ The website was deployed using GitHub Pages by following these steps:
 6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
 7. Press Enter to create your local clone
 
+The project uses a number of API's, below are the steps to configure the API in your environment
+
+## Email JS API
+1. Create an account at https://www.emailjs.com/ 
+2. In the integration screen in the emailjs dashboard, note your userid
+3. Create a email service in the Email Services section and note the id
+4. Create a email template in the Email templates section and note the id
+5. Update the script sendEmail.js, method sendMail with your user id, email service id and email template id
+
+## Aztro API
+1. Create an account at https://rapidapi.com/hub
+2. Search for aztro api and register for it
+3. Select the code snippet necessary for your environment (i used javascript fetch)
+4. Copy the snippet and use in your project
+
+
 ## Credits
 
 ### Images
@@ -555,6 +575,8 @@ The website was deployed using GitHub Pages by following these steps:
 ### Code
 - [EmailJS](https://www.emailjs.com/docs/tutorial/creating-contact-form) official tutorial & playground environment within EmailJS Email Templates were used to create a contact form with email being sent to desired address
 -  [Rapid API](https://rapidapi.com/sameer.kumar/api/aztro/) code snipped used to fech Aztro API
+- [Stackoverflow](https://stackoverflow.com/questions/9298839/is-it-possible-to-stop-javascript-execution) for the function that throws an error when credit is less than bet
+- [W3Schools](https://www.w3schools.com/tags/att_select_disabled.asp) for tutorial on "disabled" attribute
 
 ## Acknowledgements
 Many thanks to everyone who supported me in the development of the website:

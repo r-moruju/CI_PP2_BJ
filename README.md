@@ -128,12 +128,26 @@ The structure of the website was designed to be easy to learn and navigate. Each
 
 <details><summary>Home welcome modal</summary>
 <img src="docs/wireframes/home-wellcome.png">
+<img src="docs/wireframes/home-wellcome-tablet.png">
+<img src="docs/wireframes/home-wellcome-phone.png">
 </details>
 <details><summary>Home game screen</summary>
 <img src="docs/wireframes/home-main.png">
+<img src="docs/wireframes/home-main-tablet.png">
+<img src="docs/wireframes/home-main-phone.png">
 </details>
 <details><summary>Home round result</summary>
 <img src="docs/wireframes/main-hand-end.png">
+<img src="docs/wireframes/main-hand-end-tablet.png">
+<img src="docs/wireframes/main-hand-end-phone.png">
+</details>
+
+<details><summary>Quiz page</summary>
+<img src="docs/wireframes/quiz.png">
+</details>
+
+<details><summary>Feedback page</summary>
+<img src="docs/wireframes/feedback.png">
 </details>
 
 ## Technologies Used
